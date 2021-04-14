@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="1c9bd2ea48be4661aca9c23d47c9eeaa" Name="Diagram1">
+        <EntityTypeShape EntityType="IsTakipListModel.TblAdmin" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IsTakipListModel.TblDepartman" Width="1.5" PointX="0.75" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="IsTakipListModel.TblFirmalar" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IsTakipListModel.TblGorev" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="IsTakipListModel.TblGorevDetay" Width="1.5" PointX="7.5" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="IsTakipListModel.TblPersonel" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="IsTakipListModel.FK_TblPersonel_TblDepartman" ManuallyRouted="false" />
+        <AssociationConnector Association="IsTakipListModel.FK_TblGorev_TblPersonel" ManuallyRouted="false" />
+        <AssociationConnector Association="IsTakipListModel.FK_TblGorev_TblPersonel1" ManuallyRouted="false" />
+        <AssociationConnector Association="IsTakipListModel.FK_TblGorevDetay_TblGorev" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="IsTakipListModel.sysdiagrams" Width="1.5" PointX="5.375" PointY="4.75" />
+        <EntityTypeShape EntityType="IsTakipListModel.TblDurum" Width="1.5" PointX="7.375" PointY="4.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
