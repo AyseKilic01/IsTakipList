@@ -1,6 +1,6 @@
 ﻿namespace IsTakipList
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.btnDepartmanList = new DevExpress.XtraBars.BarButtonItem();
@@ -64,7 +64,7 @@
             this.btnDurum = new DevExpress.XtraBars.BarButtonItem();
             this.barSubItem2 = new DevExpress.XtraBars.BarSubItem();
             this.barSubItem3 = new DevExpress.XtraBars.BarSubItem();
-            this.barSubItem4 = new DevExpress.XtraBars.BarSubItem();
+            this.btnFirma = new DevExpress.XtraBars.BarSubItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage8 = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -130,7 +130,7 @@
             this.barSubItem1,
             this.barSubItem2,
             this.barSubItem3,
-            this.barSubItem4,
+            this.btnFirma,
             this.btnDurum});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl1.Margin = new System.Windows.Forms.Padding(4);
@@ -303,8 +303,8 @@
             // 
             this.btnGorevDetay.Caption = "Görev Detayları";
             this.btnGorevDetay.Id = 19;
-            this.btnGorevDetay.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem19.ImageOptions.Image")));
-            this.btnGorevDetay.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem19.ImageOptions.LargeImage")));
+            this.btnGorevDetay.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnGorevDetay.ImageOptions.Image")));
+            this.btnGorevDetay.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnGorevDetay.ImageOptions.LargeImage")));
             this.btnGorevDetay.Name = "btnGorevDetay";
             this.btnGorevDetay.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnGorevDetay_ItemClick);
             // 
@@ -417,13 +417,14 @@
             this.barSubItem3.Id = 35;
             this.barSubItem3.Name = "barSubItem3";
             // 
-            // barSubItem4
+            // btnFirma
             // 
-            this.barSubItem4.Caption = "Firma Tanımları";
-            this.barSubItem4.Id = 36;
-            this.barSubItem4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barSubItem4.ImageOptions.Image")));
-            this.barSubItem4.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barSubItem4.ImageOptions.LargeImage")));
-            this.barSubItem4.Name = "barSubItem4";
+            this.btnFirma.Caption = "Firma Tanımları";
+            this.btnFirma.Id = 36;
+            this.btnFirma.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barSubItem4.ImageOptions.Image")));
+            this.btnFirma.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barSubItem4.ImageOptions.LargeImage")));
+            this.btnFirma.Name = "btnFirma";
+            this.btnFirma.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnFirma_ItemClick);
             // 
             // ribbonPage1
             // 
@@ -452,7 +453,7 @@
             // 
             // ribbonPageGroup17
             // 
-            this.ribbonPageGroup17.ItemLinks.Add(this.barSubItem4);
+            this.ribbonPageGroup17.ItemLinks.Add(this.btnFirma);
             this.ribbonPageGroup17.Name = "ribbonPageGroup17";
             // 
             // ribbonPage2
@@ -583,7 +584,7 @@
             this.xtraTabbedMdiManager1.MdiParent = this;
             this.xtraTabbedMdiManager1.ShowToolTips = DevExpress.Utils.DefaultBoolean.False;
             // 
-            // Form1
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -592,7 +593,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "Form1";
+            this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "İş Takip Listesi";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -659,7 +660,7 @@
         private DevExpress.XtraBars.BarSubItem barSubItem1;
         private DevExpress.XtraBars.BarSubItem barSubItem2;
         private DevExpress.XtraBars.BarSubItem barSubItem3;
-        private DevExpress.XtraBars.BarSubItem barSubItem4;
+        private DevExpress.XtraBars.BarSubItem btnFirma;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage8;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup16;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup17;

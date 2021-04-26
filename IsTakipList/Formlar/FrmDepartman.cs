@@ -25,10 +25,11 @@ namespace IsTakipList.Formlar
             var deger = (from x in db.TblDepartman
                         select new
                         {
-                            x.Ad,
-                            x.ID
+                            x.ID,
+                            x.Ad
                         }).ToList();
             gridControl1.DataSource = deger;
+            gridView1.Columns[0].Visible = false;
         }
         private void btnListele_Click(object sender, EventArgs e)
         {

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace IsTakipList
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
         }
@@ -69,6 +69,12 @@ namespace IsTakipList
         private void btnGorevDetay_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Formlar.FrmGorevDetay frm = new Formlar.FrmGorevDetay();
+            frm.Show();
+        }
+
+        private void btnFirma_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Formlar.FrmFirmaTanim frm = new Formlar.FrmFirmaTanim();
             frm.Show();
         }
     }
