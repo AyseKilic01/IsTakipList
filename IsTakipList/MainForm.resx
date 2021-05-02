@@ -1887,7 +1887,7 @@
         6OF/AWfbb9/N8tDhAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="barSubItem4.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnFirma.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAABx0RVh0VGl0
         bGUAVGFibGVQcm9wZXJ0aWVzO1RhYmxlO+i8yXgAAALOSURBVDhPfZNbSJNhHMaXOqWj93XVXRdBdwWN
@@ -1905,7 +1905,7 @@
         kuwOCkD9qsnE25nGTuJdjKnXRJm6LMrUxHWTvayEv16WdXL/Tzy5AAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="barSubItem4.ImageOptions.LargeImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnFirma.ImageOptions.LargeImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAABx0RVh0VGl0
         bGUAVGFibGVQcm9wZXJ0aWVzO1RhYmxlO+i8yXgAAAkRSURBVFhHxZYJUJT3GcbRNIlXjrZptCbRmNoY

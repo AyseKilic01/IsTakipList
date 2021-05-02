@@ -77,5 +77,10 @@ namespace IsTakipList
             Formlar.FrmFirmaTanim frm = new Formlar.FrmFirmaTanim();
             frm.Show();
         }
+
+        private void btnFirmList_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
     }
 }
