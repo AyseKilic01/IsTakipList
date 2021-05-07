@@ -16,19 +16,19 @@ namespace IsTakipList.Formlar
         {
             InitializeComponent();
         }
-        IsTakipListEntities db = new IsTakipListEntities();
+        WorkFollow db = new WorkFollow();
         private void FrmDurum_Load(object sender, EventArgs e)
         {
-            var deger = (from x in db.TblDurum
+            var value = (from x in db.TblStatus
                          select new
                          {
                              x.ID,
-                             Açıklama = x.Aciklama,
-                             Görev = x.IsGorev,
-                             Pasif = x.Pasif
+                             Açıklama = x.statement,
+                             Görev = x.isTask,
+                             Pasif = x.passive
 
                          }).ToList();
-            gridControl1.DataSource = deger;
+            gridControl1.DataSource = value;
             
 
         }

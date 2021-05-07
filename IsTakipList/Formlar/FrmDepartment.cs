@@ -12,66 +12,66 @@ using System.Windows.Forms;
 
 namespace IsTakipList.Formlar
 {
-    public partial class FrmDepartman : Form
+    public partial class FrmDepartment : Form
     {
-        public FrmDepartman()
+        public FrmDepartment()
         {
             InitializeComponent();
-            Listele();
+            List();
         }
-        IsTakipListEntities db = new IsTakipListEntities();
-        void Listele()
+        WorkFollow db = new WorkFollow();
+        void List()
         {
-            var deger = (from x in db.TblDepartman
+            var value = (from x in db.TblDepartment
                         select new
                         {
                             x.ID,
-                            x.Ad
+                            x.departcode
                         }).ToList();
-            gridControl1.DataSource = deger;
+            gridControl1.DataSource = value;
             gridView1.Columns[0].Visible = false;
         }
-        private void btnListele_Click(object sender, EventArgs e)
+        private void btnList_Click(object sender, EventArgs e)
         {
-            Listele();
+            List();
         }
 
         private void btnEkle_Click(object sender, EventArgs e)
         {
-            TblDepartman departman = new TblDepartman();
-            departman.Ad = txtDepartman.Text;
-            db.TblDepartman.Add(departman);
+            TblDepartment departman = new TblDepartment();
+            departman.departcode = txtDepartman.Text;
+            db.TblDepartment.Add(departman);
             db.SaveChanges();
             XtraMessageBox.Show("Eklendi");
-            Listele();
+            List();
 
         }
 
         private void btnSil_Click(object sender, EventArgs e)
         {
             int x = int.Parse(gridView1.GetFocusedRowCellValue("ID").ToString());
-            var deger = db.TblDepartman.Find(x);
-            db.TblDepartman.Remove(deger);
+            var value = db.TblDepartment.Find(x);
+            db.TblDepartment.Remove(value);
             db.SaveChanges();
             XtraMessageBox.Show("Silindi");
-            Listele();
+            List();
 
         }
 
         private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
             txtID.Text = gridView1.GetFocusedRowCellValue("ID").ToString();
-            txtDepartman.Text = gridView1.GetFocusedRowCellValue("Ad").ToString();
+            txtDepartman.Text = gridView1.GetFocusedRowCellValue("departcode").ToString();
         }
 
         private void btnGuncelle_Click(object sender, EventArgs e)
         {
             int x = int.Parse(txtID.Text);
-            var deger = db.TblDepartman.Find(x);
-            deger.Ad = txtDepartman.Text;
+            var value = db.TblDepartment.Find(x);
+            value.departcode = txtDepartman.Text;
             db.SaveChanges();
             XtraMessageBox.Show("Güncellendi");
-            Listele();
+            List();
         }
     }
 }

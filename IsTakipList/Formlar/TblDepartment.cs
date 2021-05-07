@@ -12,25 +12,18 @@ namespace IsTakipList.Formlar
     using System;
     using System.Collections.Generic;
     
-    public partial class TblGorev
+    public partial class TblDepartment
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public TblGorev()
+        public TblDepartment()
         {
-            this.TblGorevDetay = new HashSet<TblGorevDetay>();
+            this.TblEmployee = new HashSet<TblEmployee>();
         }
     
         public int ID { get; set; }
-        public Nullable<int> GorevVeren { get; set; }
-        public Nullable<int> Gorevli { get; set; }
-        public string Aciklama { get; set; }
-        public string Durum { get; set; }
-        public Nullable<System.DateTime> Tarih { get; set; }
-        public Nullable<bool> Pasif { get; set; }
+        public string departcode { get; set; }
     
-        public virtual TblPersonel TblPersonel { get; set; }
-        public virtual TblPersonel TblPersonel1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TblGorevDetay> TblGorevDetay { get; set; }
+        public virtual ICollection<TblEmployee> TblEmployee { get; set; }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace IsTakipList.Formlar
 {
-    partial class FrmFirmaTanim
+    partial class FrmFirmDefinition
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmFirmaTanim));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmFirmDefinition));
             this.lstFirm = new System.Windows.Forms.ListView();
             this.columnID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnAd = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -386,7 +386,7 @@
             this.btnSil.Text = "Sil";
             this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
             // 
-            // FrmFirmaTanim
+            // FrmFirmDefinition
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -397,10 +397,10 @@
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "FrmFirmaTanim";
+            this.Name = "FrmFirmDefinition";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Firma Tanımı";
-            this.Load += new System.EventHandler(this.FrmFirmaTanim_Load);
+            this.Load += new System.EventHandler(this.FrmFirmDefinition_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();

@@ -11,17 +11,17 @@ using System.Windows.Forms;
 
 namespace IsTakipList.Formlar
 {
-    public partial class FrmGorevDetay : Form
+    public partial class FrmTaskDetail : Form
     {
-        public FrmGorevDetay()
+        public FrmTaskDetail()
         {
             InitializeComponent();
         }
-        IsTakipListEntities db = new IsTakipListEntities();
+        WorkFollow db = new WorkFollow();
         private void FrmGorevDetay_Load(object sender, EventArgs e)
         {
-            db.TblGorevDetay.Load();
-            bindingSource1.DataSource = db.TblGorevDetay.Local;
+            db.TblDetailTask.Load();
+            bindingSource1.DataSource = db.TblDetailTask.Local;
         }
 
         private void gridView1_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)

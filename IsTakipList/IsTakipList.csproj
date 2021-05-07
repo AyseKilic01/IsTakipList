@@ -64,11 +64,59 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Formlar\FrmFirmaTanim.cs">
+    <Compile Include="Formlar\FrmFirmDefinition.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formlar\FrmFirmaTanim.Designer.cs">
-      <DependentUpon>FrmFirmaTanim.cs</DependentUpon>
+    <Compile Include="Formlar\FrmFirmDefinition.Designer.cs">
+      <DependentUpon>FrmFirmDefinition.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>workfollow.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\sp_helpdiagrams_Result.cs">
+      <DependentUpon>workfollow.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\sysdiagrams.cs">
+      <DependentUpon>workfollow.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\TblAdmin.cs">
+      <DependentUpon>workfollow.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\TblControl.cs">
+      <DependentUpon>workfollow.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\TblDepartment.cs">
+      <DependentUpon>workfollow.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\TblDetailTask.cs">
+      <DependentUpon>workfollow.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\TblEmployee.cs">
+      <DependentUpon>workfollow.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\TblFirmList.cs">
+      <DependentUpon>workfollow.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\TblStatus.cs">
+      <DependentUpon>workfollow.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\TblTask.cs">
+      <DependentUpon>workfollow.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\workfollow.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>workfollow.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\workfollow.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>workfollow.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\workfollow.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>workfollow.edmx</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -77,26 +125,11 @@
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Formlar\AppForm.cs" />
-    <Compile Include="Formlar\DataModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Formlar\DataModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Formlar\DataModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataModel.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Formlar\FrmDepartman.cs">
+    <Compile Include="Formlar\FrmDepartment.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formlar\FrmDepartman.Designer.cs">
-      <DependentUpon>FrmDepartman.cs</DependentUpon>
+    <Compile Include="Formlar\FrmDepartment.Designer.cs">
+      <DependentUpon>FrmDepartment.cs</DependentUpon>
     </Compile>
     <Compile Include="Formlar\FrmDurum.cs">
       <SubType>Form</SubType>
@@ -104,17 +137,17 @@
     <Compile Include="Formlar\FrmDurum.Designer.cs">
       <DependentUpon>FrmDurum.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formlar\FrmGorev.cs">
+    <Compile Include="Formlar\FrmTask.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formlar\FrmGorev.Designer.cs">
-      <DependentUpon>FrmGorev.cs</DependentUpon>
+    <Compile Include="Formlar\FrmTask.Designer.cs">
+      <DependentUpon>FrmTask.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formlar\FrmGorevDetay.cs">
+    <Compile Include="Formlar\FrmTaskDetail.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formlar\FrmGorevDetay.Designer.cs">
-      <DependentUpon>FrmGorevDetay.cs</DependentUpon>
+    <Compile Include="Formlar\FrmTaskDetail.Designer.cs">
+      <DependentUpon>FrmTaskDetail.cs</DependentUpon>
     </Compile>
     <Compile Include="Formlar\FrmGorevListesi.cs">
       <SubType>Form</SubType>
@@ -128,11 +161,11 @@
     <Compile Include="Formlar\FrmPersonel.Designer.cs">
       <DependentUpon>FrmPersonel.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formlar\FrmPersonelIstatistik.cs">
+    <Compile Include="Formlar\FrmStatistic.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formlar\FrmPersonelIstatistik.Designer.cs">
-      <DependentUpon>FrmPersonelIstatistik.cs</DependentUpon>
+    <Compile Include="Formlar\FrmStatistic.Designer.cs">
+      <DependentUpon>FrmStatistic.cs</DependentUpon>
     </Compile>
     <Compile Include="Formlar\OpenForm.cs">
       <SubType>Form</SubType>
@@ -140,55 +173,25 @@
     <Compile Include="Formlar\OpenForm.Designer.cs">
       <DependentUpon>OpenForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formlar\sp_helpdiagramdefinition_Result.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Formlar\sp_helpdiagrams_Result.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Formlar\sysdiagrams.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Formlar\TblAdmin.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Formlar\TblDepartman.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Formlar\TblDurum.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Formlar\TblFirmalar.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Formlar\TblGorev.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Formlar\TblGorevDetay.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Formlar\TblPersonel.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Formlar\FrmFirmaTanim.resx">
-      <DependentUpon>FrmFirmaTanim.cs</DependentUpon>
+    <EmbeddedResource Include="Formlar\FrmFirmDefinition.resx">
+      <DependentUpon>FrmFirmDefinition.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formlar\FrmDepartman.resx">
-      <DependentUpon>FrmDepartman.cs</DependentUpon>
+    <EmbeddedResource Include="Formlar\FrmDepartment.resx">
+      <DependentUpon>FrmDepartment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formlar\FrmDurum.resx">
       <DependentUpon>FrmDurum.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formlar\FrmGorev.resx">
-      <DependentUpon>FrmGorev.cs</DependentUpon>
+    <EmbeddedResource Include="Formlar\FrmTask.resx">
+      <DependentUpon>FrmTask.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formlar\FrmGorevDetay.resx">
-      <DependentUpon>FrmGorevDetay.cs</DependentUpon>
+    <EmbeddedResource Include="Formlar\FrmTaskDetail.resx">
+      <DependentUpon>FrmTaskDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formlar\FrmGorevListesi.resx">
       <DependentUpon>FrmGorevListesi.cs</DependentUpon>
@@ -196,8 +199,8 @@
     <EmbeddedResource Include="Formlar\FrmPersonel.resx">
       <DependentUpon>FrmPersonel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formlar\FrmPersonelIstatistik.resx">
-      <DependentUpon>FrmPersonelIstatistik.cs</DependentUpon>
+    <EmbeddedResource Include="Formlar\FrmStatistic.resx">
+      <DependentUpon>FrmStatistic.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formlar\OpenForm.resx">
       <DependentUpon>OpenForm.cs</DependentUpon>
@@ -212,12 +215,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EntityDeploy Include="Formlar\DataModel.edmx">
+    <EntityDeploy Include="Formlar\workfollow.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>DataModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>workfollow.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Formlar\DataModel.edmx.diagram">
-      <DependentUpon>DataModel.edmx</DependentUpon>
+    <None Include="Formlar\workfollow.edmx.diagram">
+      <DependentUpon>workfollow.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -234,19 +237,19 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Formlar\DataModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>DataModel.Context.cs</LastGenOutput>
-      <DependentUpon>DataModel.edmx</DependentUpon>
-    </Content>
-    <Content Include="Formlar\DataModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DataModel.edmx</DependentUpon>
-      <LastGenOutput>DataModel.cs</LastGenOutput>
-    </Content>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Content Include="Formlar\workfollow.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>workfollow.edmx</DependentUpon>
+      <LastGenOutput>workfollow.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Formlar\workfollow.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>workfollow.edmx</DependentUpon>
+      <LastGenOutput>workfollow.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

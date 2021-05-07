@@ -16,17 +16,17 @@ namespace IsTakipList.Formlar
         {
             InitializeComponent();
         }
-        IsTakipListEntities db = new IsTakipListEntities();
+        WorkFollow db = new WorkFollow();
         private void FrmGorevListesi_Load(object sender, EventArgs e)
         {
-            gridControl1.DataSource = (from x in db.TblGorev
+            gridControl1.DataSource = (from x in db.TblTask
                                        select new
                                        {
-                                          Açıklama = x.Aciklama
+                                          Açıklama = x.statement
                                        }).ToList();
-            cntAktifGorev.Text = db.TblGorev.Count(x => x.Pasif == false).ToString();
-            cntPasifGorev.Text = db.TblGorev.Count(x => x.Pasif == true).ToString();
-            cntDepartman.Text = db.TblDepartman.Count().ToString();
+            cntAktifGorev.Text = db.TblTask.Count(x => x.passive == false).ToString();
+            cntPasifGorev.Text = db.TblTask.Count(x => x.passive == true).ToString();
+            cntDepartman.Text = db.TblDepartment.Count().ToString();
         }
     }
 }

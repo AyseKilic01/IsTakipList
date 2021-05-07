@@ -11,46 +11,45 @@ using System.Windows.Forms;
 
 namespace IsTakipList.Formlar
 {
-    public partial class FrmFirmaTanim : Form
+    public partial class FrmFirmDefinition : Form
     {
-        IsTakipListEntities db = new IsTakipListEntities();
-        public FrmFirmaTanim()
+        WorkFollow db = new WorkFollow();
+        public FrmFirmDefinition()
         {
             InitializeComponent();
         }
-        void Listele()
+        void List()
         {
-            var degerler = (from x in db.TblFirmalar
+            var values = (from x in db.TblFirmList
                             select new
                             {
                                 x.ID,
-                                x.Ad,
-                                x.Adres,
-                                x.MailAdres,
-                                x.Yetkili,
-                                x.Telefon,
-                                x.il,
-                                x.ilce
+                                x.name,
+                                x.address,
+                                x.mail,
+                                x.author,
+                                x.phone,
+                                x.city,
+                                x.district
 
                             }).ToList();
-            foreach (var i in degerler)
+            foreach (var i in values)
             {
                 ListViewItem list = new ListViewItem();
                 list.Text = i.ID.ToString();
-                list.SubItems.Add(i.Ad.ToString());
-                list.SubItems.Add(i.Adres.ToString());
-                list.SubItems.Add(i.MailAdres.ToString());
-                list.SubItems.Add(i.Yetkili.ToString());
-                list.SubItems.Add(i.Telefon.ToString());
-                list.SubItems.Add(i.il.ToString());
-                list.SubItems.Add(i.ilce.ToString());
+                list.SubItems.Add(i.name.ToString());
+                list.SubItems.Add(i.address.ToString());
+                list.SubItems.Add(i.mail.ToString());
+                list.SubItems.Add(i.author.ToString());
+                list.SubItems.Add(i.phone.ToString());
+                list.SubItems.Add(i.city.ToString());
+                list.SubItems.Add(i.district.ToString());
                 lstFirm.Items.Add(list);
             }
         }
-
-        private void FrmFirmaTanim_Load(object sender, EventArgs e)
+        private void FrmFirmDefinition_Load(object sender, EventArgs e)
         {
-            Listele();
+            List();
         }
         int id = 0;
         private void lstFirm_Click(object sender, EventArgs e)
@@ -72,17 +71,17 @@ namespace IsTakipList.Formlar
 
         private void btnGuncelle_Click(object sender, EventArgs e)
         {
-            var deger = db.TblFirmalar.Find(id);
-            deger.Ad = txtFirm.Text;
-            deger.Adres = txtAdres.Text;
-            deger.Yetkili = txtYetkili.Text;
-            deger.MailAdres = txtMail.Text;
-            deger.il = txtIl.Text;
-            deger.ilce = txtIlce.Text;
-            deger.Telefon = txtTel.Text;
+            var value = db.TblFirmList.Find(id);
+            value.name = txtFirm.Text;
+            value.address = txtAdres.Text;
+            value.author = txtYetkili.Text;
+            value.mail = txtMail.Text;
+            value.city = txtIl.Text;
+            value.district = txtIlce.Text;
+            value.phone = txtTel.Text;
             db.SaveChanges();
             XtraMessageBox.Show("Güncellendi");
-            Listele();
+            List();
         }
 
         private void btnSil_Click(object sender, EventArgs e)

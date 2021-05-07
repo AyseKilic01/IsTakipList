@@ -19,7 +19,7 @@ namespace IsTakipList
 
         private void btnDepartmanList_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Formlar.FrmDepartman frm = new Formlar.FrmDepartman();
+            Formlar.FrmDepartment frm = new Formlar.FrmDepartment();
             frm.MdiParent = this;
             frm.Show();
         }
@@ -33,7 +33,7 @@ namespace IsTakipList
 
         private void btnPersonelIstatistik_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Formlar.FrmPersonelIstatistik frm = new Formlar.FrmPersonelIstatistik();
+            Formlar.FrmStatistic frm = new Formlar.FrmStatistic();
             frm.MdiParent = this;
             frm.Show();
         }
@@ -54,7 +54,7 @@ namespace IsTakipList
 
         private void btnGorevTanimi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Formlar.FrmGorev frm = new Formlar.FrmGorev();
+            Formlar.FrmTask frm = new Formlar.FrmTask();
             //frm.MdiParent = this;
             frm.Show();
         }
@@ -68,13 +68,13 @@ namespace IsTakipList
 
         private void btnGorevDetay_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Formlar.FrmGorevDetay frm = new Formlar.FrmGorevDetay();
+            Formlar.FrmTaskDetail frm = new Formlar.FrmTaskDetail();
             frm.Show();
         }
 
         private void btnFirma_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Formlar.FrmFirmaTanim frm = new Formlar.FrmFirmaTanim();
+            Formlar.FrmFirmDefinition frm = new Formlar.FrmFirmDefinition();
             frm.Show();
         }
 

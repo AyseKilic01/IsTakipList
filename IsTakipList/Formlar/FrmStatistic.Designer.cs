@@ -1,6 +1,6 @@
 ﻿namespace IsTakipList.Formlar
 {
-    partial class FrmPersonelIstatistik
+    partial class FrmStatistic
     {
         /// <summary>
         /// Required designer variable.

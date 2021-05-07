@@ -15,52 +15,52 @@ namespace IsTakipList.Formlar
     
     public partial class FrmPersonel : Form
     {
-        IsTakipListEntities db = new IsTakipListEntities();
+        WorkFollow db = new WorkFollow();
         public FrmPersonel()
         {
             InitializeComponent();
         }
         void Listele()
         {
-            var degerler = (from x in db.TblPersonel
+            var degerler = (from x in db.TblEmployee
                            select new
                            {
                                x.ID,
-                               x.Ad,
-                               x.Soyad,
-                               x.MailAdres,
-                               x.Telefon,
-                              Departman = x.TblDepartman.Ad,
-                               x.Durum
+                               x.name,
+                               x.surname,
+                               x.mail,
+                               x.phone,
+                              Department = x.TblDepartment.departcode,
+                               x.statu
 
                            }).ToList();
-            gridControl1.DataSource = degerler.Where(x=>x.Durum == true).ToList();
+            gridControl1.DataSource = degerler.Where(x=>x.statu == true).ToList();
         }
 
         private void gridControl1_Load(object sender, EventArgs e)
         {
             Listele();
-            var departmanlar = (from x in db.TblDepartman
+            var departmanlar = (from x in db.TblDepartment
                                 select new
                                 {
                                     x.ID,
-                                    x.Ad
+                                    x.departcode
 
                                 }).ToList();
-            lookUpDepartman.Properties.DisplayMember = "Ad";
+            lookUpDepartman.Properties.DisplayMember = "name";
             lookUpDepartman.Properties.ValueMember = "ID";
             lookUpDepartman.Properties.DataSource = departmanlar;
         }
 
         private void btnEkle_Click(object sender, EventArgs e)
         {
-            TblPersonel t = new TblPersonel();
-            t.Ad = txtAd.Text;
-            t.Soyad = txtSoyad.Text;
-            t.MailAdres = txtMail.Text;
-            t.Telefon = txtTel.Text;
-            t.Departman =Convert.ToInt32(lookUpDepartman.EditValue.ToString());
-            db.TblPersonel.Add(t);
+            TblEmployee t = new TblEmployee();
+            t.name = txtAd.Text;
+            t.surname = txtSoyad.Text;
+            t.mail = txtMail.Text;
+            t.phone = txtTel.Text;
+            t.departmentID =Convert.ToInt32(lookUpDepartman.EditValue.ToString());
+            db.TblEmployee.Add(t);
             db.SaveChanges();
             XtraMessageBox.Show("Yeni Personel Eklendi");
             Listele();
@@ -69,8 +69,8 @@ namespace IsTakipList.Formlar
         private void btnSil_Click(object sender, EventArgs e)
         {
             int x = int.Parse(gridView1.GetFocusedRowCellValue("ID").ToString());
-            var deger = db.TblPersonel.Find(x);
-            deger.Durum = false;
+            var deger = db.TblEmployee.Find(x);
+            deger.statu = false;
             db.SaveChanges();
             XtraMessageBox.Show("Personel listesinden çıkarıldı.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             Listele();
@@ -79,12 +79,12 @@ namespace IsTakipList.Formlar
         private void btnGuncelle_Click(object sender, EventArgs e)
         {
             int x = int.Parse(txtID.Text);
-            var deger = db.TblPersonel.Find(x);
-            deger.Ad = txtAd.Text;
-            deger.Soyad = txtSoyad.Text;
-            deger.MailAdres = txtMail.Text;
-            if(deger.Departman != null)
-                deger.Departman = int.Parse(lookUpDepartman.EditValue.ToString());
+            var deger = db.TblEmployee.Find(x);
+            deger.name = txtAd.Text;
+            deger.surname = txtSoyad.Text;
+            deger.mail = txtMail.Text;
+            if(deger.departmentID != null)
+                deger.departmentID = int.Parse(lookUpDepartman.EditValue.ToString());
             XtraMessageBox.Show("Departman boş olamaz !!!", "Bilgi", MessageBoxButtons.OKCancel);         
             db.SaveChanges();
             XtraMessageBox.Show("Güncellendi", "Bilgi", MessageBoxButtons.OK);
@@ -94,10 +94,10 @@ namespace IsTakipList.Formlar
         private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
             txtID.Text = gridView1.GetFocusedRowCellValue("ID").ToString();
-            txtAd.Text = gridView1.GetFocusedRowCellValue("Ad").ToString();
-            txtSoyad.Text = gridView1.GetFocusedRowCellValue("Soyad").ToString();
-            txtMail.Text = gridView1.GetFocusedRowCellValue("MailAdres").ToString();
-            lookUpDepartman.Text = gridView1.GetFocusedRowCellValue("Departman").ToString();
+            txtAd.Text = gridView1.GetFocusedRowCellValue("name").ToString();
+            txtSoyad.Text = gridView1.GetFocusedRowCellValue("surname").ToString();
+            txtMail.Text = gridView1.GetFocusedRowCellValue("mail").ToString();
+            lookUpDepartman.Text = gridView1.GetFocusedRowCellValue("departmanID").ToString();
         }
     }
 }

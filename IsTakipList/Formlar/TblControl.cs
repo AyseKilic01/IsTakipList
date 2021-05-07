@@ -12,11 +12,9 @@ namespace IsTakipList.Formlar
     using System;
     using System.Collections.Generic;
     
-    public partial class TblDurum
+    public partial class TblControl
     {
         public int ID { get; set; }
-        public string Aciklama { get; set; }
-        public Nullable<bool> Pasif { get; set; }
-        public Nullable<bool> IsGorev { get; set; }
+        public Nullable<int> RowId { get; set; }
     }
 }

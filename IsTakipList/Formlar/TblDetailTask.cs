@@ -12,14 +12,14 @@ namespace IsTakipList.Formlar
     using System;
     using System.Collections.Generic;
     
-    public partial class TblGorevDetay
+    public partial class TblDetailTask
     {
         public int ID { get; set; }
-        public Nullable<int> Gorev { get; set; }
-        public string Aciklama { get; set; }
-        public Nullable<System.DateTime> Tarih { get; set; }
-        public string Saat { get; set; }
+        public Nullable<int> task { get; set; }
+        public string statement { get; set; }
+        public Nullable<System.DateTime> date { get; set; }
+        public string time { get; set; }
     
-        public virtual TblGorev TblGorev { get; set; }
+        public virtual TblTask TblTask { get; set; }
     }
 }

@@ -15,10 +15,10 @@ namespace IsTakipList.Formlar
     using System.Data.Entity.Core.Objects;
     using System.Linq;
     
-    public partial class IsTakipListEntities : DbContext
+    public partial class WorkFollow : DbContext
     {
-        public IsTakipListEntities()
-            : base("name=IsTakipListEntities")
+        public WorkFollow()
+            : base("name=WorkFollow")
         {
         }
     
@@ -27,14 +27,15 @@ namespace IsTakipList.Formlar
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<TblAdmin> TblAdmin { get; set; }
-        public virtual DbSet<TblDepartman> TblDepartman { get; set; }
-        public virtual DbSet<TblFirmalar> TblFirmalar { get; set; }
-        public virtual DbSet<TblGorev> TblGorev { get; set; }
-        public virtual DbSet<TblGorevDetay> TblGorevDetay { get; set; }
-        public virtual DbSet<TblPersonel> TblPersonel { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
-        public virtual DbSet<TblDurum> TblDurum { get; set; }
+        public virtual DbSet<TblAdmin> TblAdmin { get; set; }
+        public virtual DbSet<TblControl> TblControl { get; set; }
+        public virtual DbSet<TblDepartment> TblDepartment { get; set; }
+        public virtual DbSet<TblDetailTask> TblDetailTask { get; set; }
+        public virtual DbSet<TblEmployee> TblEmployee { get; set; }
+        public virtual DbSet<TblFirmList> TblFirmList { get; set; }
+        public virtual DbSet<TblStatus> TblStatus { get; set; }
+        public virtual DbSet<TblTask> TblTask { get; set; }
     
         public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
         {

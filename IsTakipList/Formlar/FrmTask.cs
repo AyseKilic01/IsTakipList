@@ -11,42 +11,42 @@ using System.Windows.Forms;
 
 namespace IsTakipList.Formlar
 {
-    public partial class FrmGorev : Form
+    public partial class FrmTask : Form
     {
-        public FrmGorev()
+        public FrmTask()
         {
             InitializeComponent();
           
         }
-
+        WorkFollow db = new WorkFollow();
         private void FrmGorev_Load(object sender, EventArgs e)
         {
-            var degerler = (from x in db.TblPersonel
+            var degerler = (from x in db.TblEmployee
                                 select new
                                 {
                                     x.ID,
-                                    AdSoyad = x.Ad +" "+ x.Soyad
+                                    nameSurname = x.name +" "+ x.surname
 
                                 }).ToList();
-            lueGorevli.Properties.DisplayMember = "AdSoyad";
+            lueGorevli.Properties.DisplayMember = "nameSurname";
             lueGorevli.Properties.ValueMember = "ID";
             lueGorevli.Properties.DataSource = degerler;
-            lueYetkili.Properties.DisplayMember = "AdSoyad";
+            lueYetkili.Properties.DisplayMember = "nameSurname";
             lueYetkili.Properties.ValueMember = "ID";
             lueYetkili.Properties.DataSource = degerler;
 
         }
-        IsTakipListEntities db = new IsTakipListEntities();
+        
         private void btnEkle_Click(object sender, EventArgs e)
         {
-            TblGorev gorevs = new TblGorev();
-            gorevs.Aciklama = txtAciklama.Text;
-            gorevs.Gorevli = Int32.Parse(lueGorevli.EditValue.ToString());
-            gorevs.GorevVeren = Int32.Parse(lueYetkili.EditValue.ToString());
-            gorevs.Tarih = DateTime.Parse(lueDate.Text);
-            gorevs.Durum = "1";
+            TblTask gorevs = new TblTask();
+            gorevs.statement = txtAciklama.Text;
+            gorevs.employee = Int32.Parse(lueGorevli.EditValue.ToString());
+            gorevs.commissioner = Int32.Parse(lueYetkili.EditValue.ToString());
+            gorevs.date = DateTime.Parse(lueDate.Text);
+            gorevs.statu = "1";
 
-            db.TblGorev.Add(gorevs);
+            db.TblTask.Add(gorevs);
             db.SaveChanges();
             XtraMessageBox.Show("Yeni Görev Eklendi");
         }

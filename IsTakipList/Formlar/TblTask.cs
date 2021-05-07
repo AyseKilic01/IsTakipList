@@ -12,28 +12,25 @@ namespace IsTakipList.Formlar
     using System;
     using System.Collections.Generic;
     
-    public partial class TblPersonel
+    public partial class TblTask
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public TblPersonel()
+        public TblTask()
         {
-            this.TblGorev = new HashSet<TblGorev>();
-            this.TblGorev1 = new HashSet<TblGorev>();
+            this.TblDetailTask = new HashSet<TblDetailTask>();
         }
     
         public int ID { get; set; }
-        public string Ad { get; set; }
-        public string Soyad { get; set; }
-        public string MailAdres { get; set; }
-        public string Telefon { get; set; }
-        public string Gorsel { get; set; }
-        public Nullable<int> Departman { get; set; }
-        public Nullable<bool> Durum { get; set; }
+        public Nullable<int> commissioner { get; set; }
+        public Nullable<int> employee { get; set; }
+        public string statement { get; set; }
+        public string statu { get; set; }
+        public Nullable<System.DateTime> date { get; set; }
+        public Nullable<bool> passive { get; set; }
     
-        public virtual TblDepartman TblDepartman { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TblGorev> TblGorev { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TblGorev> TblGorev1 { get; set; }
+        public virtual ICollection<TblDetailTask> TblDetailTask { get; set; }
+        public virtual TblEmployee TblEmployee { get; set; }
+        public virtual TblEmployee TblEmployee1 { get; set; }
     }
 }

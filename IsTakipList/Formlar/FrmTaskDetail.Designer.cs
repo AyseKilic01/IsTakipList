@@ -1,6 +1,6 @@
 ﻿namespace IsTakipList.Formlar
 {
-    partial class FrmGorevDetay
+    partial class FrmTaskDetail
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmGorevDetay));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmTaskDetail));
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();

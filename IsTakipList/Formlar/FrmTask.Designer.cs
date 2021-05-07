@@ -1,6 +1,6 @@
 ﻿namespace IsTakipList.Formlar
 {
-    partial class FrmGorev
+    partial class FrmTask
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmGorev));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmTask));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.cmbDurum = new DevExpress.XtraEditors.ComboBoxEdit();
             this.pictureEdit5 = new DevExpress.XtraEditors.PictureEdit();

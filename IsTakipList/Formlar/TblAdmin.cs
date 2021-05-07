@@ -15,7 +15,7 @@ namespace IsTakipList.Formlar
     public partial class TblAdmin
     {
         public int ID { get; set; }
-        public string Kullanici { get; set; }
-        public string Sifre { get; set; }
+        public string username { get; set; }
+        public string password { get; set; }
     }
 }
