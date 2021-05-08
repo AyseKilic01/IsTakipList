@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.cntPersonel = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.cntSehirSayisi = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
@@ -103,16 +103,6 @@
             this.panelControl1.Size = new System.Drawing.Size(262, 118);
             this.panelControl1.TabIndex = 0;
             // 
-            // labelControl1
-            // 
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(59, 17);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(148, 28);
-            this.labelControl1.TabIndex = 0;
-            this.labelControl1.Text = "Personel Sayısı";
-            // 
             // cntPersonel
             // 
             this.cntPersonel.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -122,6 +112,16 @@
             this.cntPersonel.Size = new System.Drawing.Size(13, 28);
             this.cntPersonel.TabIndex = 1;
             this.cntPersonel.Text = "0";
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.labelControl1.Appearance.Options.UseFont = true;
+            this.labelControl1.Location = new System.Drawing.Point(59, 17);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(148, 28);
+            this.labelControl1.TabIndex = 0;
+            this.labelControl1.Text = "Personel Sayısı";
             // 
             // panelControl2
             // 
@@ -486,11 +486,11 @@
             this.labelControl24.TabIndex = 0;
             this.labelControl24.Text = "Pasif İş Sayısı";
             // 
-            // FrmPersonelIstatistik
+            // FrmStatistic
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1344, 531);
+            this.ClientSize = new System.Drawing.Size(1253, 468);
             this.Controls.Add(this.panelControl10);
             this.Controls.Add(this.panelControl11);
             this.Controls.Add(this.panelControl12);
@@ -503,9 +503,9 @@
             this.Controls.Add(this.panelControl3);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
-            this.Name = "FrmPersonelIstatistik";
+            this.Name = "FrmStatistic";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Personel İstatistikleri";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmPersonelIstatistik_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);

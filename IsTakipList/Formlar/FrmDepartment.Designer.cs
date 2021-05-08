@@ -51,12 +51,12 @@
             // gridControl1
             // 
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
             this.gridControl1.Location = new System.Drawing.Point(6, 0);
             this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gridControl1.Margin = new System.Windows.Forms.Padding(4);
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(782, 444);
+            this.gridControl1.Size = new System.Drawing.Size(630, 338);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -78,16 +78,16 @@
             this.groupControl1.Controls.Add(this.txtDepartman);
             this.groupControl1.Controls.Add(this.labelControl1);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.groupControl1.Location = new System.Drawing.Point(788, 0);
-            this.groupControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupControl1.Location = new System.Drawing.Point(636, 0);
+            this.groupControl1.Margin = new System.Windows.Forms.Padding(4);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(331, 444);
+            this.groupControl1.Size = new System.Drawing.Size(331, 338);
             this.groupControl1.TabIndex = 1;
             // 
             // txtID
             // 
             this.txtID.Location = new System.Drawing.Point(105, 79);
-            this.txtID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtID.Margin = new System.Windows.Forms.Padding(4);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(54, 22);
             this.txtID.TabIndex = 7;
@@ -96,7 +96,7 @@
             // labelControl2
             // 
             this.labelControl2.Location = new System.Drawing.Point(7, 82);
-            this.labelControl2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.labelControl2.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(84, 16);
             this.labelControl2.TabIndex = 6;
@@ -107,7 +107,7 @@
             // 
             this.btnGuncelle.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnGuncelle.ImageOptions.Image")));
             this.btnGuncelle.Location = new System.Drawing.Point(151, 289);
-            this.btnGuncelle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGuncelle.Margin = new System.Windows.Forms.Padding(4);
             this.btnGuncelle.Name = "btnGuncelle";
             this.btnGuncelle.Size = new System.Drawing.Size(133, 28);
             this.btnGuncelle.TabIndex = 5;
@@ -118,7 +118,7 @@
             // 
             this.btnSil.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSil.ImageOptions.Image")));
             this.btnSil.Location = new System.Drawing.Point(151, 254);
-            this.btnSil.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSil.Margin = new System.Windows.Forms.Padding(4);
             this.btnSil.Name = "btnSil";
             this.btnSil.Size = new System.Drawing.Size(133, 28);
             this.btnSil.TabIndex = 4;
@@ -129,7 +129,7 @@
             // 
             this.btnEkle.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnEkle.ImageOptions.Image")));
             this.btnEkle.Location = new System.Drawing.Point(151, 218);
-            this.btnEkle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEkle.Margin = new System.Windows.Forms.Padding(4);
             this.btnEkle.Name = "btnEkle";
             this.btnEkle.Size = new System.Drawing.Size(133, 28);
             this.btnEkle.TabIndex = 3;
@@ -139,7 +139,7 @@
             // txtDepartman
             // 
             this.txtDepartman.Location = new System.Drawing.Point(105, 117);
-            this.txtDepartman.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDepartman.Margin = new System.Windows.Forms.Padding(4);
             this.txtDepartman.Name = "txtDepartman";
             this.txtDepartman.Size = new System.Drawing.Size(179, 22);
             this.txtDepartman.TabIndex = 1;
@@ -147,7 +147,7 @@
             // labelControl1
             // 
             this.labelControl1.Location = new System.Drawing.Point(7, 121);
-            this.labelControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.labelControl1.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(90, 16);
             this.labelControl1.TabIndex = 0;
@@ -156,26 +156,25 @@
             // splitterControl1
             // 
             this.splitterControl1.Location = new System.Drawing.Point(0, 0);
-            this.splitterControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.splitterControl1.Margin = new System.Windows.Forms.Padding(4);
             this.splitterControl1.Name = "splitterControl1";
-            this.splitterControl1.Size = new System.Drawing.Size(6, 444);
+            this.splitterControl1.Size = new System.Drawing.Size(6, 338);
             this.splitterControl1.TabIndex = 2;
             this.splitterControl1.TabStop = false;
             // 
-            // FrmDepartman
+            // FrmDepartment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1119, 444);
+            this.ClientSize = new System.Drawing.Size(967, 338);
             this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.splitterControl1);
             this.Controls.Add(this.groupControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Name = "FrmDepartman";
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Name = "FrmDepartment";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Departman Listesi";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace IsTakipList.Formlar
 {
-    public partial class FrmDurum : Form
+    public partial class FrmStatus : Form
     {
-        public FrmDurum()
+        public FrmStatus()
         {
             InitializeComponent();
         }

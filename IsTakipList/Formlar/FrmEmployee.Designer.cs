@@ -1,6 +1,6 @@
 ﻿namespace IsTakipList.Formlar
 {
-    partial class FrmPersonel
+    partial class FrmEmployee
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPersonel));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEmployee));
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
@@ -63,10 +63,12 @@
             // gridControl1
             // 
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(5, 0);
+            this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gridControl1.Location = new System.Drawing.Point(6, 0);
             this.gridControl1.MainView = this.gridView1;
+            this.gridControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(617, 344);
+            this.gridControl1.Size = new System.Drawing.Size(588, 338);
             this.gridControl1.TabIndex = 3;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -74,6 +76,7 @@
             // 
             // gridView1
             // 
+            this.gridView1.DetailHeight = 431;
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowGroupPanel = false;
@@ -97,87 +100,98 @@
             this.groupControl1.Controls.Add(this.txtAd);
             this.groupControl1.Controls.Add(this.labelControl1);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.groupControl1.Location = new System.Drawing.Point(622, 0);
+            this.groupControl1.Location = new System.Drawing.Point(594, 0);
+            this.groupControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(280, 344);
+            this.groupControl1.Size = new System.Drawing.Size(373, 338);
             this.groupControl1.TabIndex = 4;
             // 
             // lookUpDepartman
             // 
-            this.lookUpDepartman.Location = new System.Drawing.Point(125, 185);
+            this.lookUpDepartman.Location = new System.Drawing.Point(167, 228);
+            this.lookUpDepartman.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lookUpDepartman.Name = "lookUpDepartman";
             this.lookUpDepartman.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.lookUpDepartman.Properties.NullText = "";
-            this.lookUpDepartman.Size = new System.Drawing.Size(100, 20);
+            this.lookUpDepartman.Size = new System.Drawing.Size(133, 22);
             this.lookUpDepartman.TabIndex = 15;
             // 
             // labelControl6
             // 
-            this.labelControl6.Location = new System.Drawing.Point(17, 188);
+            this.labelControl6.Location = new System.Drawing.Point(23, 231);
+            this.labelControl6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(101, 13);
+            this.labelControl6.Size = new System.Drawing.Size(121, 16);
             this.labelControl6.TabIndex = 14;
             this.labelControl6.Text = "Personel Departman:";
             // 
             // txtTel
             // 
-            this.txtTel.Location = new System.Drawing.Point(125, 153);
+            this.txtTel.Location = new System.Drawing.Point(167, 188);
+            this.txtTel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtTel.Name = "txtTel";
-            this.txtTel.Size = new System.Drawing.Size(100, 20);
+            this.txtTel.Size = new System.Drawing.Size(133, 22);
             this.txtTel.TabIndex = 13;
             // 
             // labelControl5
             // 
-            this.labelControl5.Location = new System.Drawing.Point(17, 160);
+            this.labelControl5.Location = new System.Drawing.Point(23, 197);
+            this.labelControl5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(62, 13);
+            this.labelControl5.Size = new System.Drawing.Size(76, 16);
             this.labelControl5.TabIndex = 12;
             this.labelControl5.Text = "Personel Tel:";
             // 
             // txtSoyad
             // 
-            this.txtSoyad.Location = new System.Drawing.Point(125, 91);
+            this.txtSoyad.Location = new System.Drawing.Point(167, 112);
+            this.txtSoyad.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtSoyad.Name = "txtSoyad";
-            this.txtSoyad.Size = new System.Drawing.Size(100, 20);
+            this.txtSoyad.Size = new System.Drawing.Size(133, 22);
             this.txtSoyad.TabIndex = 11;
             // 
             // labelControl3
             // 
-            this.labelControl3.Location = new System.Drawing.Point(17, 94);
+            this.labelControl3.Location = new System.Drawing.Point(23, 116);
+            this.labelControl3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(80, 13);
+            this.labelControl3.Size = new System.Drawing.Size(96, 16);
             this.labelControl3.TabIndex = 10;
             this.labelControl3.Text = "Personel Soyadı:";
             // 
             // txtMail
             // 
-            this.txtMail.Location = new System.Drawing.Point(125, 122);
+            this.txtMail.Location = new System.Drawing.Point(167, 150);
+            this.txtMail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtMail.Name = "txtMail";
-            this.txtMail.Size = new System.Drawing.Size(100, 20);
+            this.txtMail.Size = new System.Drawing.Size(133, 22);
             this.txtMail.TabIndex = 9;
             // 
             // labelControl4
             // 
-            this.labelControl4.Location = new System.Drawing.Point(17, 125);
+            this.labelControl4.Location = new System.Drawing.Point(23, 154);
+            this.labelControl4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(66, 13);
+            this.labelControl4.Size = new System.Drawing.Size(81, 16);
             this.labelControl4.TabIndex = 8;
             this.labelControl4.Text = "Personel Mail:";
             // 
             // txtID
             // 
-            this.txtID.Location = new System.Drawing.Point(125, 25);
+            this.txtID.Location = new System.Drawing.Point(167, 31);
+            this.txtID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(100, 20);
+            this.txtID.Size = new System.Drawing.Size(133, 22);
             this.txtID.TabIndex = 7;
             this.txtID.Visible = false;
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(17, 28);
+            this.labelControl2.Location = new System.Drawing.Point(23, 34);
+            this.labelControl2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(59, 13);
+            this.labelControl2.Size = new System.Drawing.Size(70, 16);
             this.labelControl2.TabIndex = 6;
             this.labelControl2.Text = "Personel ID:";
             this.labelControl2.Visible = false;
@@ -185,9 +199,10 @@
             // btnGuncelle
             // 
             this.btnGuncelle.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnGuncelle.ImageOptions.Image")));
-            this.btnGuncelle.Location = new System.Drawing.Point(125, 294);
+            this.btnGuncelle.Location = new System.Drawing.Point(167, 362);
+            this.btnGuncelle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnGuncelle.Name = "btnGuncelle";
-            this.btnGuncelle.Size = new System.Drawing.Size(100, 23);
+            this.btnGuncelle.Size = new System.Drawing.Size(133, 28);
             this.btnGuncelle.TabIndex = 5;
             this.btnGuncelle.Text = "Güncelle";
             this.btnGuncelle.Click += new System.EventHandler(this.btnGuncelle_Click);
@@ -195,9 +210,10 @@
             // btnSil
             // 
             this.btnSil.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSil.ImageOptions.Image")));
-            this.btnSil.Location = new System.Drawing.Point(125, 265);
+            this.btnSil.Location = new System.Drawing.Point(167, 326);
+            this.btnSil.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSil.Name = "btnSil";
-            this.btnSil.Size = new System.Drawing.Size(100, 23);
+            this.btnSil.Size = new System.Drawing.Size(133, 28);
             this.btnSil.TabIndex = 4;
             this.btnSil.Text = "Sil";
             this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
@@ -205,48 +221,53 @@
             // btnEkle
             // 
             this.btnEkle.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnEkle.ImageOptions.Image")));
-            this.btnEkle.Location = new System.Drawing.Point(125, 236);
+            this.btnEkle.Location = new System.Drawing.Point(167, 290);
+            this.btnEkle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnEkle.Name = "btnEkle";
-            this.btnEkle.Size = new System.Drawing.Size(100, 23);
+            this.btnEkle.Size = new System.Drawing.Size(133, 28);
             this.btnEkle.TabIndex = 3;
             this.btnEkle.Text = "Ekle";
             this.btnEkle.Click += new System.EventHandler(this.btnEkle_Click);
             // 
             // txtAd
             // 
-            this.txtAd.Location = new System.Drawing.Point(125, 56);
+            this.txtAd.Location = new System.Drawing.Point(167, 69);
+            this.txtAd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtAd.Name = "txtAd";
-            this.txtAd.Size = new System.Drawing.Size(100, 20);
+            this.txtAd.Size = new System.Drawing.Size(133, 22);
             this.txtAd.TabIndex = 1;
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(17, 59);
+            this.labelControl1.Location = new System.Drawing.Point(23, 73);
+            this.labelControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(63, 13);
+            this.labelControl1.Size = new System.Drawing.Size(76, 16);
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Personel Adı:";
             // 
             // splitterControl1
             // 
             this.splitterControl1.Location = new System.Drawing.Point(0, 0);
+            this.splitterControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.splitterControl1.Name = "splitterControl1";
-            this.splitterControl1.Size = new System.Drawing.Size(5, 344);
+            this.splitterControl1.Size = new System.Drawing.Size(6, 338);
             this.splitterControl1.TabIndex = 5;
             this.splitterControl1.TabStop = false;
             // 
-            // FrmPersonel
+            // FrmEmployee
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(902, 344);
+            this.ClientSize = new System.Drawing.Size(967, 338);
             this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.splitterControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "FrmPersonel";
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Name = "FrmEmployee";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Personel Listesi";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();

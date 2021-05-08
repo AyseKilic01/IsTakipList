@@ -13,10 +13,10 @@ using System.Windows.Forms;
 namespace IsTakipList.Formlar
 {
     
-    public partial class FrmPersonel : Form
+    public partial class FrmEmployee : Form
     {
         WorkFollow db = new WorkFollow();
-        public FrmPersonel()
+        public FrmEmployee()
         {
             InitializeComponent();
         }
@@ -35,6 +35,7 @@ namespace IsTakipList.Formlar
 
                            }).ToList();
             gridControl1.DataSource = degerler.Where(x=>x.statu == true).ToList();
+           
         }
 
         private void gridControl1_Load(object sender, EventArgs e)
@@ -97,7 +98,7 @@ namespace IsTakipList.Formlar
             txtAd.Text = gridView1.GetFocusedRowCellValue("name").ToString();
             txtSoyad.Text = gridView1.GetFocusedRowCellValue("surname").ToString();
             txtMail.Text = gridView1.GetFocusedRowCellValue("mail").ToString();
-            lookUpDepartman.Text = gridView1.GetFocusedRowCellValue("departmanID").ToString();
+            lookUpDepartman.Text = gridView1.GetFocusedRowCellValue("Department").ToString();
         }
     }
 }

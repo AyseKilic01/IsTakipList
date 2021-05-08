@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace IsTakipList.Formlar
 {
-    public partial class FrmGorevListesi : Form
+    public partial class FrmlTaskDetail : Form
     {
-        public FrmGorevListesi()
+        public FrmlTaskDetail()
         {
             InitializeComponent();
         }
