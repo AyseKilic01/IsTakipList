@@ -1,4 +1,6 @@
 ﻿using DevExpress.XtraEditors;
+using ITLBusiness.Concrete.Managers;
+using ITLEntity.Concrete;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,27 +17,19 @@ namespace IsTakipList.Formlar
     
     public partial class FrmEmployee : Form
     {
+        #region objects
         WorkFollow db = new WorkFollow();
+        EmployeeManager manager = new EmployeeManager();
+        Employee empl = new Employee();
+        #endregion
         public FrmEmployee()
         {
             InitializeComponent();
         }
         void Listele()
         {
-            var degerler = (from x in db.TblEmployee
-                           select new
-                           {
-                               x.ID,
-                               x.name,
-                               x.surname,
-                               x.mail,
-                               x.phone,
-                              Department = x.TblDepartment.departcode,
-                               x.statu
-
-                           }).ToList();
+            var degerler = manager.GetAllBL();
             gridControl1.DataSource = degerler.Where(x=>x.statu == true).ToList();
-           
         }
 
         private void gridControl1_Load(object sender, EventArgs e)
@@ -55,14 +49,8 @@ namespace IsTakipList.Formlar
 
         private void btnEkle_Click(object sender, EventArgs e)
         {
-            TblEmployee t = new TblEmployee();
-            t.name = txtAd.Text;
-            t.surname = txtSoyad.Text;
-            t.mail = txtMail.Text;
-            t.phone = txtTel.Text;
-            t.departmentID =Convert.ToInt32(lookUpDepartman.EditValue.ToString());
-            db.TblEmployee.Add(t);
-            db.SaveChanges();
+            empl.ID = Convert.ToInt32(txtID.Text);
+            
             XtraMessageBox.Show("Yeni Personel Eklendi");
             Listele();
         }

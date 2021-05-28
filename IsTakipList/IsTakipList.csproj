@@ -260,5 +260,22 @@
       <LastGenOutput>workfollow.cs</LastGenOutput>
     </Content>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ITLBusiness\ITLBusiness.csproj">
+      <Project>{7e145931-4aea-45e9-b8ac-04bd128d38a8}</Project>
+      <Name>ITLBusiness</Name>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </ProjectReference>
+    <ProjectReference Include="..\ITLDataAccess\ITLDataAccess.csproj">
+      <Project>{14750614-349c-4cc0-af97-9ff2d126d4ec}</Project>
+      <Name>ITLDataAccess</Name>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </ProjectReference>
+    <ProjectReference Include="..\ITLEntity\ITLEntity.csproj">
+      <Project>{c924c1f7-4754-41c8-8425-f057c6607136}</Project>
+      <Name>ITLEntity</Name>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
