@@ -2,25 +2,20 @@
 using ITLBusiness.Concrete.Managers;
 using ITLEntity.Concrete;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
 namespace IsTakipList.Formlar
 {
-    
+
     public partial class FrmEmployee : Form
     {
         #region objects
         WorkFollow db = new WorkFollow();
         EmployeeManager manager = new EmployeeManager();
-        Employee empl = new Employee();
+        ITLEntity.Concrete.TblEmployee empl = new ITLEntity.Concrete.TblEmployee();
         #endregion
         public FrmEmployee()
         {
@@ -31,10 +26,8 @@ namespace IsTakipList.Formlar
             var degerler = manager.GetAllBL();
             gridControl1.DataSource = degerler.Where(x=>x.statu == true).ToList();
         }
-
-        private void gridControl1_Load(object sender, EventArgs e)
+        void ListDepart()
         {
-            Listele();
             var departmanlar = (from x in db.TblDepartment
                                 select new
                                 {
@@ -45,6 +38,12 @@ namespace IsTakipList.Formlar
             lookUpDepartman.Properties.DisplayMember = "name";
             lookUpDepartman.Properties.ValueMember = "ID";
             lookUpDepartman.Properties.DataSource = departmanlar;
+        }
+
+        private void gridControl1_Load(object sender, EventArgs e)
+        {
+            Listele();
+            ListDepart();
         }
 
         private void btnEkle_Click(object sender, EventArgs e)

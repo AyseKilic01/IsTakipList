@@ -9,30 +9,30 @@ using System.Threading.Tasks;
 
 namespace ITLBusiness.Concrete.Managers
 {
-    public class EmployeeManager : IListService<TblEmployee>
+   public class StatusManager : IListService<Statu>
     {
-        GenericRepository<TblEmployee> repository = new GenericRepository<TblEmployee>();
+        GenericRepository<Statu> repository = new GenericRepository<Statu>();
 
-        public void Add(TblEmployee prop)
+        public void Add(Statu prop)
         {
             repository.Insert(prop);
         }
 
-        public void Delete(TblEmployee prop)
+        public void Delete(Statu prop)
         {
             repository.Delete(prop);
         }
 
-        public List<TblEmployee> GetAllBL()
+        public List<Statu> GetAllBL()
         {
             return repository.List();
         }
-        public List<TblEmployee> GetAllBL(int id)
+        public List<Statu> GetAllBL(int id)
         {
             return repository.List().Where(x => x.ID == id).ToList();
         }
 
-        public void Update(TblEmployee prop)
+        public void Update(Statu prop)
         {
             repository.Update(prop);
         }

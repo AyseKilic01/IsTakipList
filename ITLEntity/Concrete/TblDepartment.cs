@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace ITLEntity.Concrete
 {
-    public class Admin
+   public class TblDepartment
     {
         public int ID { get; set; }
-        public string username { get; set; }
-        public string password { get; set; }
+        public string departcode { get; set; }
     }
 }

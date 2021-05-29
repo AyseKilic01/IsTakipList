@@ -1,13 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace ITLEntity.Concrete
 {
-    public class Employee
+    public class TblEmployee
     {
+        [Key]
         public int ID { get; set; }
         public string name { get; set; }
         public string surname { get; set; }

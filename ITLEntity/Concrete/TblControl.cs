@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace ITLEntity.Concrete
 {
-   public class Department
+    public class TblControl
     {
         public int ID { get; set; }
-        public string departcode { get; set; }
+        public int RowId { get; set; }
     }
 }

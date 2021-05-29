@@ -7,32 +7,32 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ITLBusiness.Concrete.Managers
+namespace ITLBusiness.Concrete.Managers 
 {
-    public class EmployeeManager : IListService<TblEmployee>
+    public class FirmManager : IListService<Firm>
     {
-        GenericRepository<TblEmployee> repository = new GenericRepository<TblEmployee>();
+        GenericRepository<Firm> repository = new GenericRepository<Firm>();
 
-        public void Add(TblEmployee prop)
+        public void Add(Firm prop)
         {
             repository.Insert(prop);
         }
 
-        public void Delete(TblEmployee prop)
+        public void Delete(Firm prop)
         {
             repository.Delete(prop);
         }
 
-        public List<TblEmployee> GetAllBL()
+        public List<Firm> GetAllBL()
         {
             return repository.List();
         }
-        public List<TblEmployee> GetAllBL(int id)
+        public List<Firm> GetAllBL(int id)
         {
             return repository.List().Where(x => x.ID == id).ToList();
         }
 
-        public void Update(TblEmployee prop)
+        public void Update(Firm prop)
         {
             repository.Update(prop);
         }

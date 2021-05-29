@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ITLEntity.Concrete
 {
-   public class DetailTask
+   public class TblDetailTask
     {
         public int ID { get; set; }
         public string task { get; set; }

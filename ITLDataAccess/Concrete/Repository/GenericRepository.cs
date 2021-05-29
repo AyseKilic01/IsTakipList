@@ -11,14 +11,18 @@ namespace ITLDataAccess.Concrete.Repository
 {
     public class GenericRepository<T> : IRepository<T> where T : class
     {
-        IsTakipListEntities entities = new IsTakipListEntities();
+        #region objects
+        IsTakipListEntities entities = new IsTakipListEntities(); //provide sql
         DbSet<T> _object;
-
+        #endregion
+        #region const
         public GenericRepository()
         {
             _object = entities.Set<T>();
 
         }
+        #endregion
+
         public void Delete(T p)
         {
             _object.Remove(p);

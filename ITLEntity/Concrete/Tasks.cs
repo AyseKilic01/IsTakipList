@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ITLEntity.Concrete
 {
-    public class Task
+    public class Tasks
     {
         public int ID { get; set; }
         public int commissioner { get; set; }
