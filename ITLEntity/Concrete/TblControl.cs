@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ITLEntity.Abstract;
 
 namespace ITLEntity.Concrete
 {
-    public class TblControl
+    public class TblControl : IEntity
     {
         public int ID { get; set; }
         public int RowId { get; set; }

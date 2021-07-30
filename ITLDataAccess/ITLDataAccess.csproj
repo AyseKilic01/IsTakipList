@@ -54,79 +54,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\IRepository.cs" />
-    <Compile Include="Concrete\ManageEDM.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ManageEDM.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Concrete\ManageEDM.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ManageEDM.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Concrete\ManageEDM.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ManageEDM.edmx</DependentUpon>
-    </Compile>
     <Compile Include="Concrete\Repository\GenericRepository.cs" />
-    <Compile Include="Concrete\sp_helpdiagramdefinition_Result.cs">
-      <DependentUpon>ManageEDM.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Concrete\sp_helpdiagrams_Result.cs">
-      <DependentUpon>ManageEDM.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Concrete\sysdiagrams.cs">
-      <DependentUpon>ManageEDM.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Concrete\TblAdmin.cs">
-      <DependentUpon>ManageEDM.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Concrete\TblControl.cs">
-      <DependentUpon>ManageEDM.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Concrete\TblDepartment.cs">
-      <DependentUpon>ManageEDM.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Concrete\TblDetailTask.cs">
-      <DependentUpon>ManageEDM.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Concrete\TblEmployee.cs">
-      <DependentUpon>ManageEDM.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Concrete\TblFirmList.cs">
-      <DependentUpon>ManageEDM.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Concrete\TblStatus.cs">
-      <DependentUpon>ManageEDM.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Concrete\TblTask.cs">
-      <DependentUpon>ManageEDM.tt</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <EntityDeploy Include="Concrete\ManageEDM.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ManageEDM.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="Concrete\ManageEDM.edmx.diagram">
-      <DependentUpon>ManageEDM.edmx</DependentUpon>
-    </None>
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Concrete\ManageEDM.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ManageEDM.edmx</DependentUpon>
-      <LastGenOutput>ManageEDM.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Concrete\ManageEDM.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ManageEDM.edmx</DependentUpon>
-      <LastGenOutput>ManageEDM.cs</LastGenOutput>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

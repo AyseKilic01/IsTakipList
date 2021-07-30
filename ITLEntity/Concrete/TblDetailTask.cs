@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ITLEntity.Abstract;
+using System;
 
 namespace ITLEntity.Concrete
 {
-   public class TblDetailTask
+    public class TblDetailTask : IEntity
     {
         public int ID { get; set; }
         public string task { get; set; }

@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ITLEntity.Abstract;
 
 namespace ITLEntity.Concrete
 {
-    public class Firm
+    public class Firm : IEntity
     {
         public int ID { get; set; }
         public string name { get; set; }
