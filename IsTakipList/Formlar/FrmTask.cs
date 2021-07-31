@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraEditors;
+using ITLEntity.Concrete;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -39,7 +40,7 @@ namespace IsTakipList.Formlar
         
         private void btnEkle_Click(object sender, EventArgs e)
         {
-            TblTask gorevs = new TblTask();
+            Tasks gorevs = new Tasks();
             gorevs.statement = txtAciklama.Text;
             gorevs.employee = Int32.Parse(lueGorevli.EditValue.ToString());
             gorevs.commissioner = Int32.Parse(lueYetkili.EditValue.ToString());

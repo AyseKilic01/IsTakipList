@@ -77,54 +77,6 @@
     <Compile Include="Formlar\MainPage.Designer.cs">
       <DependentUpon>MainPage.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formlar\sp_helpdiagramdefinition_Result.cs">
-      <DependentUpon>workfollow.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Formlar\sp_helpdiagrams_Result.cs">
-      <DependentUpon>workfollow.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Formlar\sysdiagrams.cs">
-      <DependentUpon>workfollow.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Formlar\TblAdmin.cs">
-      <DependentUpon>workfollow.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Formlar\TblControl.cs">
-      <DependentUpon>workfollow.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Formlar\TblDepartment.cs">
-      <DependentUpon>workfollow.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Formlar\TblDetailTask.cs">
-      <DependentUpon>workfollow.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Formlar\TblEmployee.cs">
-      <DependentUpon>workfollow.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Formlar\TblFirmList.cs">
-      <DependentUpon>workfollow.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Formlar\TblStatus.cs">
-      <DependentUpon>workfollow.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Formlar\TblTask.cs">
-      <DependentUpon>workfollow.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Formlar\workfollow.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>workfollow.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Formlar\workfollow.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>workfollow.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Formlar\workfollow.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>workfollow.edmx</DependentUpon>
-    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -226,13 +178,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EntityDeploy Include="Formlar\workfollow.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>workfollow.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="Formlar\workfollow.edmx.diagram">
-      <DependentUpon>workfollow.edmx</DependentUpon>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -249,18 +194,6 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Formlar\workfollow.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>workfollow.edmx</DependentUpon>
-      <LastGenOutput>workfollow.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Formlar\workfollow.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>workfollow.edmx</DependentUpon>
-      <LastGenOutput>workfollow.cs</LastGenOutput>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ITLBusiness\ITLBusiness.csproj">

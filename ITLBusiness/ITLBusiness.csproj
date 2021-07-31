@@ -52,7 +52,6 @@
     <Compile Include="Concrete\Managers\TaskManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\ITLDataAccess\ITLDataAccess.csproj">
       <Project>{14750614-349C-4CC0-AF97-9FF2D126D4EC}</Project>

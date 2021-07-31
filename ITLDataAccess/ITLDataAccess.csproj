@@ -53,10 +53,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\IFirmDAL.cs" />
     <Compile Include="Abstract\IRepository.cs" />
+    <Compile Include="Abstract\ITaskDAL.cs" />
+    <Compile Include="Abstract\ITblAdminDAL.cs" />
+    <Compile Include="Abstract\ITblControlDAL.cs" />
+    <Compile Include="Abstract\ITblDepartmentDAL.cs" />
+    <Compile Include="Abstract\ITblDetailTaskDAL.cs" />
+    <Compile Include="Abstract\ITblEmployeeDAL.cs" />
     <Compile Include="Concrete\ConnectSqlCommand.cs" />
     <Compile Include="Concrete\ConnectString.cs" />
+    <Compile Include="Concrete\FirmDAL.cs" />
+    <Compile Include="Concrete\IsTakiplistEntites.cs" />
     <Compile Include="Concrete\Repository\GenericRepository.cs" />
+    <Compile Include="Concrete\TaskDAL.cs" />
+    <Compile Include="Concrete\TblAdminDAL.cs" />
+    <Compile Include="Concrete\TblControlDAL.cs" />
+    <Compile Include="Concrete\TblDepartmentDAL.cs" />
+    <Compile Include="Concrete\TblDetailTaskDAL.cs" />
+    <Compile Include="Concrete\TblEmployeeDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -68,6 +83,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="System\Windows\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ITLEntity\ITLEntity.csproj">
+      <Project>{C924C1F7-4754-41C8-8425-F057C6607136}</Project>
+      <Name>ITLEntity</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
