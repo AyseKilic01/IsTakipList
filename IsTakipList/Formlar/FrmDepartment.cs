@@ -1,12 +1,9 @@
 ﻿using DevExpress.XtraEditors;
+using ITLDataAccess.Concrete;
+using ITLEntity.Concrete;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
@@ -19,10 +16,10 @@ namespace IsTakipList.Formlar
             InitializeComponent();
             List();
         }
-        WorkFollow db = new WorkFollow();
+        IsTakiplistEntites db = new IsTakiplistEntites();
         void List()
         {
-            var value = (from x in db.TblDepartment
+            var value = (from x in db.TblDepartments
                         select new
                         {
                             x.ID,
@@ -40,7 +37,7 @@ namespace IsTakipList.Formlar
         {
             TblDepartment departman = new TblDepartment();
             departman.departcode = txtDepartman.Text;
-            db.TblDepartment.Add(departman);
+            db.TblDepartments.Add(departman);
             db.SaveChanges();
             XtraMessageBox.Show("Eklendi");
             List();
@@ -50,8 +47,8 @@ namespace IsTakipList.Formlar
         private void btnSil_Click(object sender, EventArgs e)
         {
             int x = int.Parse(gridView1.GetFocusedRowCellValue("ID").ToString());
-            var value = db.TblDepartment.Find(x);
-            db.TblDepartment.Remove(value);
+            var value = db.TblDepartments.Find(x);
+            db.TblDepartments.Remove(value);
             db.SaveChanges();
             XtraMessageBox.Show("Silindi");
             List();
@@ -67,7 +64,7 @@ namespace IsTakipList.Formlar
         private void btnGuncelle_Click(object sender, EventArgs e)
         {
             int x = int.Parse(txtID.Text);
-            var value = db.TblDepartment.Find(x);
+            var value = db.TblDepartments.Find(x);
             value.departcode = txtDepartman.Text;
             db.SaveChanges();
             XtraMessageBox.Show("Güncellendi");

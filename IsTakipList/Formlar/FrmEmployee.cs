@@ -1,5 +1,6 @@
 ﻿using DevExpress.XtraEditors;
 using ITLBusiness.Concrete.Managers;
+using ITLDataAccess.Concrete;
 using ITLEntity.Concrete;
 using System;
 using System.Data;
@@ -13,7 +14,7 @@ namespace IsTakipList.Formlar
     public partial class FrmEmployee : Form
     {
         #region objects
-        WorkFollow db = new WorkFollow();
+        IsTakiplistEntites db = new IsTakiplistEntites();
         EmployeeManager manager = new EmployeeManager();
         ITLEntity.Concrete.TblEmployee empl = new ITLEntity.Concrete.TblEmployee();
         #endregion
@@ -28,7 +29,7 @@ namespace IsTakipList.Formlar
         }
         void ListDepart()
         {
-            var departmanlar = (from x in db.TblDepartment
+            var departmanlar = (from x in db.TblDepartments
                                 select new
                                 {
                                     x.ID,
@@ -57,8 +58,8 @@ namespace IsTakipList.Formlar
         private void btnSil_Click(object sender, EventArgs e)
         {
             int x = int.Parse(gridView1.GetFocusedRowCellValue("ID").ToString());
-            var deger = db.TblEmployee.Find(x);
-            deger.statu = false;
+            var deger = db.TblEmployees.Find(x);
+            //deger.statu = false;
             db.SaveChanges();
             XtraMessageBox.Show("Personel listesinden çıkarıldı.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             Listele();
@@ -67,12 +68,12 @@ namespace IsTakipList.Formlar
         private void btnGuncelle_Click(object sender, EventArgs e)
         {
             int x = int.Parse(txtID.Text);
-            var deger = db.TblEmployee.Find(x);
-            deger.name = txtAd.Text;
-            deger.surname = txtSoyad.Text;
-            deger.mail = txtMail.Text;
-            if(deger.departmentID != null)
-                deger.departmentID = int.Parse(lookUpDepartman.EditValue.ToString());
+            var deger = db.TblEmployees.Find(x);
+           // deger.name = txtAd.Text;
+           // deger.surname = txtSoyad.Text;
+           // deger.mail = txtMail.Text;
+           // if(deger.departmentID != null)
+           //     deger.departmentID = int.Parse(lookUpDepartman.EditValue.ToString());
             XtraMessageBox.Show("Departman boş olamaz !!!", "Bilgi", MessageBoxButtons.OKCancel);         
             db.SaveChanges();
             XtraMessageBox.Show("Güncellendi", "Bilgi", MessageBoxButtons.OK);

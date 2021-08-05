@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ITLDataAccess.Concrete;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,17 +17,17 @@ namespace IsTakipList.Formlar
         {
             InitializeComponent();
         }
-        WorkFollow db = new WorkFollow();
+        IsTakiplistEntites db = new IsTakiplistEntites();
         private void FrmPersonelIstatistik_Load(object sender, EventArgs e)
         {
-            cntPersonel.Text = db.TblEmployee.Count().ToString();
-            cntDepartman.Text = db.TblDepartment.Count().ToString();
-            cntFirma.Text = db.TblFirmList.Count().ToString();
-            cntAktifGorev.Text = db.TblTask.Count(x => x.passive == false).ToString();
-            cntPasifGorev.Text = db.TblTask.Count(x => x.passive == true).ToString();
-            lblSonGorev.Text = db.TblTask.OrderByDescending(x => x.ID).Select(x => x.statement).FirstOrDefault();
-            cntSehirSayisi.Text = db.TblFirmList.Select(x => x.city).Distinct().Count().ToString();
-            cntSektor.Text = db.TblFirmList.Select(x => x.sector).Distinct().Count().ToString();
+            cntPersonel.Text = db.TblEmployees.Count().ToString();
+            cntDepartman.Text = db.TblDepartments.Count().ToString();
+            cntFirma.Text = db.Firms.Count().ToString();
+            cntAktifGorev.Text = db.Tasks.Count(x => x.passive == false).ToString();
+            cntPasifGorev.Text = db.Tasks.Count(x => x.passive == true).ToString();
+            lblSonGorev.Text = db.Tasks.OrderByDescending(x => x.ID).Select(x => x.statement).FirstOrDefault();
+            cntSehirSayisi.Text = db.Firms.Select(x => x.city).Distinct().Count().ToString();
+            cntSektor.Text = db.Firms.Select(x => x.sector).Distinct().Count().ToString();
 
         }
     }

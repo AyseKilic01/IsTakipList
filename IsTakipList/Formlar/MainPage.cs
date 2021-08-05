@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ITLDataAccess.Concrete;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,14 +17,15 @@ namespace IsTakipList.Formlar
         {
             InitializeComponent();
         }
-        WorkFollow db = new WorkFollow();
+        IsTakiplistEntites db = new IsTakiplistEntites();
         private void MainPage_Load(object sender, EventArgs e)
         {
-            gridControl1.DataSource =(from i in  db.TblTask
+            gridControl1.DataSource =(from i in  db.Tasks
                                       select new {
-                                        Görev =  i.statement,
-                                         Görevli = i.TblEmployee.name + " " + i.TblEmployee.surname
+                                         Görev =  i.statement
             }).ToList();
+            gridControl2.DataSource = "";
+            gridControl3.DataSource = "";
            
         }
     }

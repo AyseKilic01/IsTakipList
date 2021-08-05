@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraEditors;
+using ITLDataAccess.Concrete;
 using ITLEntity.Concrete;
 using System;
 using System.Collections.Generic;
@@ -19,14 +20,14 @@ namespace IsTakipList.Formlar
             InitializeComponent();
           
         }
-        WorkFollow db = new WorkFollow();
+        IsTakiplistEntites db = new IsTakiplistEntites();
         private void FrmGorev_Load(object sender, EventArgs e)
         {
-            var degerler = (from x in db.TblEmployee
+            var degerler = (from x in db.TblEmployees
                                 select new
                                 {
-                                    x.ID,
-                                    nameSurname = x.name +" "+ x.surname
+                             //       x.id,
+                             //       nameSurname = x.name +" "+ x.surname
 
                                 }).ToList();
             lueGorevli.Properties.DisplayMember = "nameSurname";
@@ -47,7 +48,7 @@ namespace IsTakipList.Formlar
             gorevs.date = DateTime.Parse(lueDate.Text);
             gorevs.statu = "1";
 
-            db.TblTask.Add(gorevs);
+            db.Tasks.Add(gorevs);
             db.SaveChanges();
             XtraMessageBox.Show("Yeni Görev Eklendi");
         }

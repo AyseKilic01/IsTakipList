@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraEditors;
+using ITLDataAccess.Concrete;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,14 +14,14 @@ namespace IsTakipList.Formlar
 {
     public partial class FrmFirmDefinition : Form
     {
-        WorkFollow db = new WorkFollow();
+        IsTakiplistEntites db = new IsTakiplistEntites();
         public FrmFirmDefinition()
         {
             InitializeComponent();
         }
         void List()
         {
-            var values = (from x in db.TblFirmList
+            var values = (from x in db.Firms
                             select new
                             {
                                 x.ID,
@@ -71,7 +72,7 @@ namespace IsTakipList.Formlar
 
         private void btnGuncelle_Click(object sender, EventArgs e)
         {
-            var value = db.TblFirmList.Find(id);
+            var value = db.Firms.Find(id);
             value.name = txtFirm.Text;
             value.address = txtAdres.Text;
             value.author = txtYetkili.Text;

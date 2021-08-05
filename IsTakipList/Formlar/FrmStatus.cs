@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ITLDataAccess.Concrete;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,10 +17,10 @@ namespace IsTakipList.Formlar
         {
             InitializeComponent();
         }
-        WorkFollow db = new WorkFollow();
+        IsTakiplistEntites db = new IsTakiplistEntites();
         private void FrmDurum_Load(object sender, EventArgs e)
         {
-            var value = (from x in db.TblStatus
+            var value = (from x in db.Status
                          select new
                          {
                              x.ID,

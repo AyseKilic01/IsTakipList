@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ITLDataAccess.Concrete;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,11 +18,11 @@ namespace IsTakipList.Formlar
         {
             InitializeComponent();
         }
-        WorkFollow db = new WorkFollow();
+        IsTakiplistEntites db = new IsTakiplistEntites();
         private void FrmGorevDetay_Load(object sender, EventArgs e)
         {
-            db.TblDetailTask.Load();
-            bindingSource1.DataSource = db.TblDetailTask.Local;
+            db.TblDetailTasks.Load();
+            bindingSource1.DataSource = db.TblDetailTasks.Local;
         }
 
         private void gridView1_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
