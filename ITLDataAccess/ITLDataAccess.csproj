@@ -64,6 +64,13 @@
     <Compile Include="Abstract\ITblEmployeeDAL.cs" />
     <Compile Include="Concrete\ConnectSqlCommand.cs" />
     <Compile Include="Concrete\ConnectString.cs" />
+    <Compile Include="Concrete\EntityFramework\EfFirmDAL.cs" />
+    <Compile Include="Concrete\EntityFramework\EfTaskDAL.cs" />
+    <Compile Include="Concrete\EntityFramework\EfTblAdminDAL.cs" />
+    <Compile Include="Concrete\EntityFramework\EfTblControlDAL.cs" />
+    <Compile Include="Concrete\EntityFramework\EfTblDepartmentDAL.cs" />
+    <Compile Include="Concrete\EntityFramework\EfTblDetailTaskDAL.cs" />
+    <Compile Include="Concrete\EntityFramework\EfTblEmployeeDAL.cs" />
     <Compile Include="Concrete\FirmDAL.cs" />
     <Compile Include="Concrete\IsTakiplistEntites.cs" />
     <Compile Include="Concrete\Repository\GenericRepository.cs" />

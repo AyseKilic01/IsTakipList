@@ -10,27 +10,35 @@ namespace ITLDataAccess.Concrete.Repository
     public class GenericRepository<T> : IRepository<T> where T : class
     {
         #region objects
-        //IsTakipListEntities entities = new IsTakipListEntities(); //provide sql
+        IsTakiplistEntites entities = new IsTakiplistEntites(); //provide sql
         DbSet<T> _object;
         #endregion
         #region const
         public GenericRepository()
         {
-            //_object = entities.Set<T>();
+            _object = entities.Set<T>();
 
         }
         #endregion
 
         public void Delete(T p)
         {
-            _object.Remove(p);
-            //entities.SaveChanges();
+            using (IsTakiplistEntites context = new IsTakiplistEntites())
+            {
+                var entity = context.Entry(p);
+                entity.State = EntityState.Deleted;
+                context.SaveChanges();
+            }
         }
 
         public void Insert(T p)
         {
-            _object.Add(p);
-            //entities.SaveChanges();
+            using (IsTakiplistEntites context = new IsTakiplistEntites())
+            {
+                var entity = context.Entry(p);
+                entity.State = EntityState.Added;
+                context.SaveChanges();
+            }
         }
 
         public List<T> List()
@@ -45,7 +53,12 @@ namespace ITLDataAccess.Concrete.Repository
 
         public void Update(T p)
         {
-            //entities.SaveChanges();
+            using (IsTakiplistEntites context = new IsTakiplistEntites())
+            {
+                var entity = context.Entry(p);
+                entity.State = EntityState.Modified;
+                context.SaveChanges();
+            }
         }
     }
 }

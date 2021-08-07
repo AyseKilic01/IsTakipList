@@ -1,4 +1,5 @@
 ﻿using ITLBusiness.Abstract;
+using ITLDataAccess.Abstract;
 using ITLDataAccess.Concrete.Repository;
 using ITLEntity.Concrete;
 using System;
@@ -12,30 +13,52 @@ namespace ITLBusiness.Concrete.Managers
    public class DepartmentManager : IListService<TblDepartment>
     {
         #region objects
-        GenericRepository<TblDepartment> repository = new GenericRepository<TblDepartment>();
+        //GenericRepository<TblDepartment> repository = new GenericRepository<TblDepartment>();
         #endregion
-        public void Add(TblDepartment prop)
-        {
-            repository.Insert(prop);
-        }
 
-        public void Delete(TblDepartment prop)
-        {
-            repository.Delete(prop);
-        }
+        ITblDepartmentDAL _dal;
 
+        public DepartmentManager(ITblDepartmentDAL dal)
+        {
+            _dal = dal;
+        }
+        public List<TblDepartment> GetAllBL(TblDepartment p)
+        {
+            return _dal.List();
+        }
         public List<TblDepartment> GetAllBL()
         {
-            return repository.List();
+            return _dal.List();
         }
+        public void Add(TblDepartment p)
+        {
+            _dal.Insert(p);
+        }
+
         public List<TblDepartment> GetAllBL(int id)
         {
-            return repository.List().Where(x => x.ID == id).ToList();
+            throw new NotImplementedException();
         }
 
         public void Update(TblDepartment prop)
         {
-            repository.Update(prop);
+            _dal.Update(prop);
         }
+
+        public void Delete(TblDepartment prop)
+        {
+            _dal.Delete(prop);
+        }
+
+        //public TblDepartment GetByID(int id)
+        //{
+        //    return _dal.Get(x => x.CategoryID == id);
+        //}
+        //public int GetCount()
+        //{
+        //    return _dal.Count();
+        //}
+
+        
     }
 }

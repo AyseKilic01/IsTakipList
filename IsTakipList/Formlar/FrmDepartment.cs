@@ -1,9 +1,9 @@
 ﻿using DevExpress.XtraEditors;
+using ITLBusiness.Concrete.Managers;
 using ITLDataAccess.Concrete;
+using ITLDataAccess.Concrete.EntityFramework;
 using ITLEntity.Concrete;
 using System;
-using System.Data;
-using System.Linq;
 using System.Windows.Forms;
 
 
@@ -19,14 +19,10 @@ namespace IsTakipList.Formlar
         IsTakiplistEntites db = new IsTakiplistEntites();
         void List()
         {
-            var value = (from x in db.TblDepartments
-                        select new
-                        {
-                            x.ID,
-                            x.departcode
-                        }).ToList();
-            gridControl1.DataSource = value;
-            gridView1.Columns[0].Visible = false;
+            DepartmentManager category = new DepartmentManager(new EfTblDepartmentDAL());
+            var categoryvalues = category.GetAllBL();
+           gridControl1.DataSource = categoryvalues;
+            //gridView1.Columns[0].Visible = false;
         }
         private void btnList_Click(object sender, EventArgs e)
         {
