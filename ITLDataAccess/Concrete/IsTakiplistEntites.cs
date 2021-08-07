@@ -12,6 +12,6 @@ namespace ITLDataAccess.Concrete
         public DbSet<TblControl> TblControls { get; set; }
         public DbSet<TblDepartment> TblDepartments { get; set; }
         public DbSet<TblDetailTask> TblDetailTasks { get; set; }
-        public DbSet<TblEmployeeDAL> TblEmployees { get; set; }
+        public DbSet<TblEmployee> TblEmployees { get; set; }
     }
 }

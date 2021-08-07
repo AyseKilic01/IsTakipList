@@ -26,7 +26,6 @@ namespace IsTakipList.Formlar
             }).ToList();
             gridControl2.DataSource = "";
             gridControl3.DataSource = "";
-           
         }
     }
 }
