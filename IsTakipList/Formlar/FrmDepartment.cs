@@ -11,18 +11,22 @@ namespace IsTakipList.Formlar
 {
     public partial class FrmDepartment : Form
     {
+        #region objects
+        DepartmentManager category = new DepartmentManager(new EfTblDepartmentDAL());
+        IsTakiplistEntites db = new IsTakiplistEntites(); //burada olmasi kötü birşey
+        #endregion
         public FrmDepartment()
         {
             InitializeComponent();
             List();
         }
-        IsTakiplistEntites db = new IsTakiplistEntites();
+        
         void List()
         {
-            DepartmentManager category = new DepartmentManager(new EfTblDepartmentDAL());
+            
             var categoryvalues = category.GetAllBL();
-           gridControl1.DataSource = categoryvalues;
-            //gridView1.Columns[0].Visible = false;
+            gctDepartman.DataSource = categoryvalues;
+            gvwDepartman.Columns[0].Visible = false;
         }
         private void btnList_Click(object sender, EventArgs e)
         {
@@ -42,7 +46,7 @@ namespace IsTakipList.Formlar
 
         private void btnSil_Click(object sender, EventArgs e)
         {
-            int x = int.Parse(gridView1.GetFocusedRowCellValue("ID").ToString());
+            int x = int.Parse(gvwDepartman.GetFocusedRowCellValue("ID").ToString());
             var value = db.TblDepartments.Find(x);
             db.TblDepartments.Remove(value);
             db.SaveChanges();
@@ -53,8 +57,8 @@ namespace IsTakipList.Formlar
 
         private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
-            txtID.Text = gridView1.GetFocusedRowCellValue("ID").ToString();
-            txtDepartman.Text = gridView1.GetFocusedRowCellValue("departcode").ToString();
+            txtID.Text = gvwDepartman.GetFocusedRowCellValue("ID").ToString();
+            txtDepartman.Text = gvwDepartman.GetFocusedRowCellValue("departcode").ToString();
         }
 
         private void btnGuncelle_Click(object sender, EventArgs e)
@@ -64,6 +68,16 @@ namespace IsTakipList.Formlar
             value.departcode = txtDepartman.Text;
             db.SaveChanges();
             XtraMessageBox.Show("Güncellendi");
+            List();
+        }
+
+        private void rbeDelete_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            int x = int.Parse(gvwDepartman.GetFocusedRowCellValue("ID").ToString());
+            var value = db.TblDepartments.Find(x);
+            db.TblDepartments.Remove(value);
+            db.SaveChanges();
+            XtraMessageBox.Show("Silindi");
             List();
         }
     }
