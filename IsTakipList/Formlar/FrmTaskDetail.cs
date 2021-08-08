@@ -18,7 +18,7 @@ namespace IsTakipList.Formlar
         {
             InitializeComponent();
         }
-        IsTakiplistEntites db = new IsTakiplistEntites();
+        IsTakipListEntities db = new IsTakipListEntities();
         private void FrmGorevDetay_Load(object sender, EventArgs e)
         {
             db.TblDetailTasks.Load();

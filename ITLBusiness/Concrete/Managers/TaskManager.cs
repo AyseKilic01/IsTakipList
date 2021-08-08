@@ -1,40 +1,59 @@
 ﻿using ITLBusiness.Abstract;
-using ITLDataAccess.Concrete.Repository;
+using ITLDataAccess.Abstract;
 using ITLEntity.Concrete;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ITLBusiness.Concrete.Managers
 {
-   public class TaskManager : IListService<Tasks>
+    public class TaskManager : IListService<Tasks>
     {
-        GenericRepository<Tasks> repository = new GenericRepository<Tasks>();
 
-        public void Add(Tasks prop)
+        #region objects
+
+        ITaskDAL _dal;
+
+        #endregion
+
+        public TaskManager(ITaskDAL dal)
         {
-            repository.Insert(prop);
+            _dal = dal;
         }
-
-        public void Delete(Tasks prop)
+        public List<Tasks> GetAllBL(Tasks p)
         {
-            repository.Delete(prop);
+            return _dal.List();
         }
-
         public List<Tasks> GetAllBL()
         {
-            return repository.List();
+            return _dal.List();
         }
+        public void Add(Tasks p)
+        {
+            _dal.Insert(p);
+        }
+
         public List<Tasks> GetAllBL(int id)
         {
-            return repository.List().Where(x => x.ID == id).ToList();
+            throw new NotImplementedException();
         }
 
         public void Update(Tasks prop)
         {
-            repository.Update(prop);
+            _dal.Update(prop);
         }
+
+        public void Delete(Tasks prop)
+        {
+            _dal.Delete(prop);
+        }
+
+        public Tasks GetByID(int id)
+        {
+            return _dal.Get(x => x.ID == id);
+        }
+        //public int GetCount()
+        //{
+        //    return _dal.Count();
+        //}
     }
 }

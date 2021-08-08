@@ -50,15 +50,15 @@ namespace ITLBusiness.Concrete.Managers
             _dal.Delete(prop);
         }
 
-        //public TblDepartment GetByID(int id)
-        //{
-        //    return _dal.Get(x => x.CategoryID == id);
-        //}
+        public TblDepartment GetByID(int id)
+        {
+            return _dal.Get(x => x.ID == id);
+        }
         //public int GetCount()
         //{
         //    return _dal.Count();
         //}
 
-        
+
     }
 }

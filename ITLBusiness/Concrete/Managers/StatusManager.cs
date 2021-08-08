@@ -1,4 +1,5 @@
 ﻿using ITLBusiness.Abstract;
+using ITLDataAccess.Abstract;
 using ITLDataAccess.Concrete.Repository;
 using ITLEntity.Concrete;
 using System;
@@ -11,30 +12,51 @@ namespace ITLBusiness.Concrete.Managers
 {
    public class StatusManager : IListService<Statu>
     {
-        GenericRepository<Statu> repository = new GenericRepository<Statu>();
+        #region objects
 
-        public void Add(Statu prop)
+        IStatuDAL _dal;
+
+        #endregion
+
+        public StatusManager(IStatuDAL dal)
         {
-            repository.Insert(prop);
+            _dal = dal;
         }
-
-        public void Delete(Statu prop)
+        public List<Statu> GetAllBL(Statu p)
         {
-            repository.Delete(prop);
+            return _dal.List();
         }
-
         public List<Statu> GetAllBL()
         {
-            return repository.List();
+            return _dal.List();
         }
+        public void Add(Statu p)
+        {
+            _dal.Insert(p);
+        }
+
         public List<Statu> GetAllBL(int id)
         {
-            return repository.List().Where(x => x.ID == id).ToList();
+            throw new NotImplementedException();
         }
 
         public void Update(Statu prop)
         {
-            repository.Update(prop);
+            _dal.Update(prop);
         }
+
+        public void Delete(Statu prop)
+        {
+            _dal.Delete(prop);
+        }
+
+        public Statu GetByID(int id)
+        {
+            return _dal.Get(x => x.ID == id);
+        }
+        //public int GetCount()
+        //{
+        //    return _dal.Count();
+        //}
     }
 }

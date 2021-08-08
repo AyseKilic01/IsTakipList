@@ -1,5 +1,6 @@
 ﻿using DevExpress.XtraEditors;
 using ITLBusiness.Concrete.Managers;
+using ITLBusiness.ValidationRules;
 using ITLDataAccess.Concrete;
 using ITLDataAccess.Concrete.EntityFramework;
 using ITLEntity.Concrete;
@@ -12,8 +13,9 @@ namespace IsTakipList.Formlar
     public partial class FrmDepartment : Form
     {
         #region objects
-        DepartmentManager category = new DepartmentManager(new EfTblDepartmentDAL());
-        IsTakiplistEntites db = new IsTakiplistEntites(); //burada olmasi kötü birşey
+        DepartmentManager d = new DepartmentManager(new EfTblDepartmentDAL());
+        IsTakipListEntities db = new IsTakipListEntities(); //burada olmasi kötü birşey
+        DepartmentValidator validate = new DepartmentValidator();
         #endregion
         public FrmDepartment()
         {
@@ -22,9 +24,8 @@ namespace IsTakipList.Formlar
         }
         
         void List()
-        {
-            
-            var categoryvalues = category.GetAllBL();
+        {        
+            var categoryvalues = d.GetAllBL();
             gctDepartman.DataSource = categoryvalues;
             gvwDepartman.Columns[0].Visible = false;
         }
@@ -37,9 +38,7 @@ namespace IsTakipList.Formlar
         {
             TblDepartment departman = new TblDepartment();
             departman.departcode = txtDepartman.Text;
-            db.TblDepartments.Add(departman);
-            db.SaveChanges();
-            XtraMessageBox.Show("Eklendi");
+            d.Add(departman);
             List();
 
         }
@@ -57,8 +56,11 @@ namespace IsTakipList.Formlar
 
         private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
-            txtID.Text = gvwDepartman.GetFocusedRowCellValue("ID").ToString();
-            txtDepartman.Text = gvwDepartman.GetFocusedRowCellValue("departcode").ToString();
+            if (gvwDepartman.GetFocusedRowCellValue("ID") != null)
+            {
+                txtID.Text = gvwDepartman.GetFocusedRowCellValue("ID").ToString();
+                txtDepartman.Text = gvwDepartman.GetFocusedRowCellValue("departcode").ToString();
+            }
         }
 
         private void btnGuncelle_Click(object sender, EventArgs e)
@@ -74,10 +76,8 @@ namespace IsTakipList.Formlar
         private void rbeDelete_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
             int x = int.Parse(gvwDepartman.GetFocusedRowCellValue("ID").ToString());
-            var value = db.TblDepartments.Find(x);
-            db.TblDepartments.Remove(value);
-            db.SaveChanges();
-            XtraMessageBox.Show("Silindi");
+            var delete = d.GetByID(x);
+            d.Delete(delete);
             List();
         }
     }

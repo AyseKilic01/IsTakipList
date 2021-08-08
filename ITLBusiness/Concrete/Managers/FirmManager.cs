@@ -1,40 +1,58 @@
 ﻿using ITLBusiness.Abstract;
-using ITLDataAccess.Concrete.Repository;
+using ITLDataAccess.Abstract;
 using ITLEntity.Concrete;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace ITLBusiness.Concrete.Managers 
+namespace ITLBusiness.Concrete.Managers
 {
     public class FirmManager : IListService<Firm>
     {
-        GenericRepository<Firm> repository = new GenericRepository<Firm>();
+        #region objects
 
-        public void Add(Firm prop)
+        IFirmDAL _dal;
+
+        #endregion
+
+        public FirmManager(IFirmDAL dal)
         {
-            repository.Insert(prop);
+            _dal = dal;
         }
-
-        public void Delete(Firm prop)
+        public List<Firm> GetAllBL(Firm p)
         {
-            repository.Delete(prop);
+            return _dal.List();
         }
-
         public List<Firm> GetAllBL()
         {
-            return repository.List();
+            return _dal.List();
         }
+        public void Add(Firm p)
+        {
+            _dal.Insert(p);
+        }
+
         public List<Firm> GetAllBL(int id)
         {
-            return repository.List().Where(x => x.ID == id).ToList();
+            throw new NotImplementedException();
         }
 
         public void Update(Firm prop)
         {
-            repository.Update(prop);
+            _dal.Update(prop);
         }
+
+        public void Delete(Firm prop)
+        {
+            _dal.Delete(prop);
+        }
+
+        public Firm GetByID(int id)
+        {
+            return _dal.Get(x => x.ID == id);
+        }
+        //public int GetCount()
+        //{
+        //    return _dal.Count();
+        //}
     }
 }

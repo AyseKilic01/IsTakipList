@@ -17,7 +17,7 @@ namespace IsTakipList.Formlar
         {
             InitializeComponent();
         }
-        IsTakiplistEntites db = new IsTakiplistEntites();
+        IsTakipListEntities db = new IsTakipListEntities();
         private void MainPage_Load(object sender, EventArgs e)
         {
             gridControl1.DataSource =(from i in  db.Tasks

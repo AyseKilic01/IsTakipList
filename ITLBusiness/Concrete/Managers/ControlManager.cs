@@ -1,4 +1,5 @@
 ﻿using ITLBusiness.Abstract;
+using ITLDataAccess.Abstract;
 using ITLDataAccess.Concrete.Repository;
 using ITLEntity.Concrete;
 using System;
@@ -11,30 +12,53 @@ namespace ITLBusiness.Concrete.Managers
 {
     public class ControlManager : IListService<TblControl>
     {
-        GenericRepository<TblControl> repository = new GenericRepository<TblControl>();
+        #region objects
 
-        public void Add(TblControl prop)
+        ITblControlDAL _dal;
+
+        #endregion
+
+        public ControlManager(ITblControlDAL dal)
         {
-            repository.Insert(prop);
+            _dal = dal;
         }
-
-        public void Delete(TblControl prop)
+        public List<TblControl> GetAllBL(TblControl p)
         {
-            repository.Delete(prop);
+            return _dal.List();
         }
-
         public List<TblControl> GetAllBL()
         {
-            return repository.List();
+            return _dal.List();
         }
+        public void Add(TblControl p)
+        {
+            _dal.Insert(p);
+        }
+
         public List<TblControl> GetAllBL(int id)
         {
-            return repository.List().Where(x => x.ID == id).ToList();
+            throw new NotImplementedException();
         }
 
         public void Update(TblControl prop)
         {
-            repository.Update(prop);
+            _dal.Update(prop);
         }
+
+        public void Delete(TblControl prop)
+        {
+            _dal.Delete(prop);
+        }
+
+        public TblControl GetByID(int id)
+        {
+            return _dal.Get(x => x.ID == id);
+        }
+        //public int GetCount()
+        //{
+        //    return _dal.Count();
+        //}
+
+
     }
 }

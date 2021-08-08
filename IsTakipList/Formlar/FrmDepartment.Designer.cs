@@ -28,10 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDepartment));
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
             this.gctDepartman = new DevExpress.XtraGrid.GridControl();
             this.gvwDepartman = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.clmID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.clmCode = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.clmDelete = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.rbeDelete = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.btnList = new DevExpress.XtraEditors.SimpleButton();
             this.txtID = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.btnGuncelle = new DevExpress.XtraEditors.SimpleButton();
@@ -40,17 +50,13 @@
             this.txtDepartman = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.splitterControl1 = new DevExpress.XtraEditors.SplitterControl();
-            this.clmID = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.clmCode = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.clmDelete = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.rbeDelete = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             ((System.ComponentModel.ISupportInitialize)(this.gctDepartman)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvwDepartman)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rbeDelete)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtID.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDepartman.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rbeDelete)).BeginInit();
             this.SuspendLayout();
             // 
             // gctDepartman
@@ -77,11 +83,58 @@
             this.gvwDepartman.DetailHeight = 431;
             this.gvwDepartman.GridControl = this.gctDepartman;
             this.gvwDepartman.Name = "gvwDepartman";
+            this.gvwDepartman.NewItemRowText = "Yeni Kayıt Satırı";
+            this.gvwDepartman.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.True;
+            this.gvwDepartman.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.True;
+            this.gvwDepartman.OptionsNavigation.EnterMoveNextColumn = true;
+            this.gvwDepartman.OptionsSelection.MultiSelect = true;
+            this.gvwDepartman.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Top;
             this.gvwDepartman.OptionsView.ShowGroupPanel = false;
             this.gvwDepartman.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView1_FocusedRowChanged);
             // 
+            // clmID
+            // 
+            this.clmID.Caption = "gridColumn1";
+            this.clmID.FieldName = "ID";
+            this.clmID.MinWidth = 25;
+            this.clmID.Name = "clmID";
+            this.clmID.Width = 94;
+            // 
+            // clmCode
+            // 
+            this.clmCode.Caption = "Departman Kodu";
+            this.clmCode.FieldName = "departcode";
+            this.clmCode.MinWidth = 25;
+            this.clmCode.Name = "clmCode";
+            this.clmCode.Visible = true;
+            this.clmCode.VisibleIndex = 0;
+            this.clmCode.Width = 1042;
+            // 
+            // clmDelete
+            // 
+            this.clmDelete.Caption = "Sil";
+            this.clmDelete.ColumnEdit = this.rbeDelete;
+            this.clmDelete.MinWidth = 25;
+            this.clmDelete.Name = "clmDelete";
+            this.clmDelete.Visible = true;
+            this.clmDelete.VisibleIndex = 1;
+            this.clmDelete.Width = 56;
+            // 
+            // rbeDelete
+            // 
+            this.rbeDelete.AutoHeight = false;
+            editorButtonImageOptions3.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions3.Image")));
+            serializableAppearanceObject9.Image = ((System.Drawing.Image)(resources.GetObject("serializableAppearanceObject9.Image")));
+            serializableAppearanceObject9.Options.UseImage = true;
+            this.rbeDelete.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.rbeDelete.Name = "rbeDelete";
+            this.rbeDelete.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.rbeDelete.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.rbeDelete_ButtonClick);
+            // 
             // groupControl1
             // 
+            this.groupControl1.Controls.Add(this.btnList);
             this.groupControl1.Controls.Add(this.txtID);
             this.groupControl1.Controls.Add(this.labelControl2);
             this.groupControl1.Controls.Add(this.btnGuncelle);
@@ -95,6 +148,17 @@
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(967, 112);
             this.groupControl1.TabIndex = 1;
+            // 
+            // btnList
+            // 
+            this.btnList.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnList.ImageOptions.Image")));
+            this.btnList.Location = new System.Drawing.Point(6, 26);
+            this.btnList.Margin = new System.Windows.Forms.Padding(4);
+            this.btnList.Name = "btnList";
+            this.btnList.Size = new System.Drawing.Size(133, 28);
+            this.btnList.TabIndex = 8;
+            this.btnList.Text = "Listele";
+            this.btnList.Click += new System.EventHandler(this.btnList_Click);
             // 
             // txtID
             // 
@@ -174,42 +238,6 @@
             this.splitterControl1.TabIndex = 2;
             this.splitterControl1.TabStop = false;
             // 
-            // clmID
-            // 
-            this.clmID.Caption = "gridColumn1";
-            this.clmID.FieldName = "ID";
-            this.clmID.MinWidth = 25;
-            this.clmID.Name = "clmID";
-            this.clmID.Width = 94;
-            // 
-            // clmCode
-            // 
-            this.clmCode.Caption = "Departman Kodu";
-            this.clmCode.FieldName = "code";
-            this.clmCode.MinWidth = 25;
-            this.clmCode.Name = "clmCode";
-            this.clmCode.Visible = true;
-            this.clmCode.VisibleIndex = 0;
-            this.clmCode.Width = 94;
-            // 
-            // clmDelete
-            // 
-            this.clmDelete.Caption = "Sil";
-            this.clmDelete.ColumnEdit = this.rbeDelete;
-            this.clmDelete.MinWidth = 25;
-            this.clmDelete.Name = "clmDelete";
-            this.clmDelete.Visible = true;
-            this.clmDelete.VisibleIndex = 1;
-            this.clmDelete.Width = 94;
-            // 
-            // rbeDelete
-            // 
-            this.rbeDelete.AutoHeight = false;
-            this.rbeDelete.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.rbeDelete.Name = "rbeDelete";
-            this.rbeDelete.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.rbeDelete_ButtonClick);
-            // 
             // FrmDepartment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -225,12 +253,12 @@
             this.Text = "Departman Listesi";
             ((System.ComponentModel.ISupportInitialize)(this.gctDepartman)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvwDepartman)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rbeDelete)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtID.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDepartman.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rbeDelete)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -252,5 +280,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn clmCode;
         private DevExpress.XtraGrid.Columns.GridColumn clmDelete;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit rbeDelete;
+        private DevExpress.XtraEditors.SimpleButton btnList;
     }
 }

@@ -14,7 +14,7 @@ namespace IsTakipList.Formlar
 {
     public partial class FrmFirmDefinition : Form
     {
-        IsTakiplistEntites db = new IsTakiplistEntites();
+        IsTakipListEntities db = new IsTakipListEntities();
         public FrmFirmDefinition()
         {
             InitializeComponent();

@@ -1,6 +1,7 @@
 ﻿using DevExpress.XtraEditors;
 using ITLBusiness.Concrete.Managers;
 using ITLDataAccess.Concrete;
+using ITLDataAccess.Concrete.EntityFramework;
 using ITLEntity.Concrete;
 using System;
 using System.Data;
@@ -14,8 +15,8 @@ namespace IsTakipList.Formlar
     public partial class FrmEmployee : Form
     {
         #region objects
-        IsTakiplistEntites db = new IsTakiplistEntites();
-        EmployeeManager manager = new EmployeeManager();
+        IsTakipListEntities db = new IsTakipListEntities();
+        EmployeeManager manager = new EmployeeManager(new EfTblEmployeeDAL());
         ITLEntity.Concrete.TblEmployee empl = new ITLEntity.Concrete.TblEmployee();
         #endregion
         public FrmEmployee()

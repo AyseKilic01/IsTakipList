@@ -1,40 +1,58 @@
 ﻿using ITLBusiness.Abstract;
-using ITLDataAccess.Concrete.Repository;
+using ITLDataAccess.Abstract;
 using ITLEntity.Concrete;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ITLBusiness.Concrete.Managers
 {
     public class EmployeeManager : IListService<TblEmployee>
     {
-        GenericRepository<TblEmployee> repository = new GenericRepository<TblEmployee>();
+        #region objects
 
-        public void Add(TblEmployee prop)
+        ITblEmployeeDAL _dal;
+
+        #endregion
+
+        public EmployeeManager(ITblEmployeeDAL dal)
         {
-            repository.Insert(prop);
+            _dal = dal;
         }
-
-        public void Delete(TblEmployee prop)
+        public List<TblEmployee> GetAllBL(TblEmployee p)
         {
-            repository.Delete(prop);
+            return _dal.List();
         }
-
         public List<TblEmployee> GetAllBL()
         {
-            return repository.List();
+            return _dal.List();
         }
+        public void Add(TblEmployee p)
+        {
+            _dal.Insert(p);
+        }
+
         public List<TblEmployee> GetAllBL(int id)
         {
-            return repository.List().Where(x => x.ID == id).ToList();
+            throw new NotImplementedException();
         }
 
         public void Update(TblEmployee prop)
         {
-            repository.Update(prop);
+            _dal.Update(prop);
         }
+
+        public void Delete(TblEmployee prop)
+        {
+            _dal.Delete(prop);
+        }
+
+        public TblEmployee GetByID(int id)
+        {
+            return _dal.Get(x => x.ID == id);
+        }
+        //public int GetCount()
+        //{
+        //    return _dal.Count();
+        //}
     }
 }

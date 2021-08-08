@@ -17,7 +17,7 @@ namespace IsTakipList.Formlar
         {
             InitializeComponent();
         }
-        IsTakiplistEntites db = new IsTakiplistEntites();
+        IsTakipListEntities db = new IsTakipListEntities();
         private void FrmDurum_Load(object sender, EventArgs e)
         {
             var value = (from x in db.Status

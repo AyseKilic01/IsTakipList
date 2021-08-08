@@ -1,40 +1,58 @@
 ﻿using ITLBusiness.Abstract;
-using ITLDataAccess.Concrete.Repository;
+using ITLDataAccess.Abstract;
 using ITLEntity.Concrete;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ITLBusiness.Concrete.Managers
 {
-   public class DetailTaskManager : IListService<TblDetailTask>
+    public class DetailTaskManager : IListService<TblDetailTask>
     {
-        GenericRepository<TblDetailTask> repository = new GenericRepository<TblDetailTask>();
+        #region objects
 
-        public void Add(TblDetailTask prop)
+        ITblDetailTaskDAL _dal;
+
+        #endregion
+
+        public DetailTaskManager(ITblDetailTaskDAL dal)
         {
-            repository.Insert(prop);
+            _dal = dal;
         }
-
-        public void Delete(TblDetailTask prop)
+        public List<TblDetailTask> GetAllBL(TblDetailTask p)
         {
-            repository.Delete(prop);
+            return _dal.List();
         }
-
         public List<TblDetailTask> GetAllBL()
         {
-            return repository.List();
+            return _dal.List();
         }
+        public void Add(TblDetailTask p)
+        {
+            _dal.Insert(p);
+        }
+
         public List<TblDetailTask> GetAllBL(int id)
         {
-            return repository.List().Where(x => x.ID == id).ToList();
+            throw new NotImplementedException();
         }
 
         public void Update(TblDetailTask prop)
         {
-            repository.Update(prop);
+            _dal.Update(prop);
         }
+
+        public void Delete(TblDetailTask prop)
+        {
+            _dal.Delete(prop);
+        }
+
+        public TblDetailTask GetByID(int id)
+        {
+            return _dal.Get(x => x.ID == id);
+        }
+        //public int GetCount()
+        //{
+        //    return _dal.Count();
+        //}
     }
 }

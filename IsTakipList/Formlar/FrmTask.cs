@@ -20,7 +20,7 @@ namespace IsTakipList.Formlar
             InitializeComponent();
           
         }
-        IsTakiplistEntites db = new IsTakiplistEntites();
+        IsTakipListEntities db = new IsTakipListEntities();
         private void FrmGorev_Load(object sender, EventArgs e)
         {
             var degerler = (from x in db.TblEmployees

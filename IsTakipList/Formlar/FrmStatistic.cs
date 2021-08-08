@@ -17,7 +17,7 @@ namespace IsTakipList.Formlar
         {
             InitializeComponent();
         }
-        IsTakiplistEntites db = new IsTakiplistEntites();
+        IsTakipListEntities db = new IsTakipListEntities();
         private void FrmPersonelIstatistik_Load(object sender, EventArgs e)
         {
             cntPersonel.Text = db.TblEmployees.Count().ToString();

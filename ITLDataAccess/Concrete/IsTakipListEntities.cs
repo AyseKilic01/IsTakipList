@@ -3,7 +3,7 @@ using System.Data.Entity;
 
 namespace ITLDataAccess.Concrete
 {
-    public class IsTakiplistEntites : DbContext
+    public class IsTakipListEntities : DbContext
     {
         public DbSet<Firm> Firms { get; set; }
         public DbSet<Statu> Status { get; set; }
