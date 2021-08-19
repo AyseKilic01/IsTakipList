@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraEditors;
+using ITLBusiness.BLC;
 using ITLBusiness.Concrete.Managers;
 using ITLDataAccess.Concrete;
 using ITLDataAccess.Concrete.EntityFramework;
@@ -25,8 +26,9 @@ namespace IsTakipList.Formlar
         }
         void Listele()
         {
-            var degerler = manager.GetAllBL();
-            gridControl1.DataSource = degerler.Where(x=>x.statu == true).ToList();
+            DataTable dtEmployee = GetDataList.getEmployeeList();
+            gctEmployee.DataSource = dtEmployee;
+            gvwEmployee.Columns[0].Visible = false;
         }
         void ListDepart()
         {
@@ -58,7 +60,7 @@ namespace IsTakipList.Formlar
 
         private void btnSil_Click(object sender, EventArgs e)
         {
-            int x = int.Parse(gridView1.GetFocusedRowCellValue("ID").ToString());
+            int x = int.Parse(gvwEmployee.GetFocusedRowCellValue("ID").ToString());
             var deger = db.TblEmployees.Find(x);
             //deger.statu = false;
             db.SaveChanges();
@@ -83,11 +85,11 @@ namespace IsTakipList.Formlar
 
         private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
-            txtID.Text = gridView1.GetFocusedRowCellValue("ID").ToString();
-            txtAd.Text = gridView1.GetFocusedRowCellValue("name").ToString();
-            txtSoyad.Text = gridView1.GetFocusedRowCellValue("surname").ToString();
-            txtMail.Text = gridView1.GetFocusedRowCellValue("mail").ToString();
-            lookUpDepartman.Text = gridView1.GetFocusedRowCellValue("Department").ToString();
+            txtID.Text = gvwEmployee.GetFocusedRowCellValue("EmployeeID").ToString();
+            txtAd.Text = gvwEmployee.GetFocusedRowCellValue("EmployeeName").ToString();
+            txtSoyad.Text = gvwEmployee.GetFocusedRowCellValue("EmployeeSurname").ToString();
+            txtMail.Text = gvwEmployee.GetFocusedRowCellValue("EmployeeMail").ToString();
+            lookUpDepartman.Text = gvwEmployee.GetFocusedRowCellValue("EmployeeDepartCode").ToString();
         }
     }
 }

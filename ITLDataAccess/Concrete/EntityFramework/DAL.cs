@@ -15,19 +15,24 @@ namespace ITLDataAccess.Concrete.EntityFramework
         public static DataTable getData(string commandtext)
         {
            try {
-                DataTable dt = null;
+                DataTable dt = new DataTable();
+                
                 SqlCommand command = new SqlCommand(commandtext);
-                connection.Open();
                 command.Connection = connection;
-                var dataReader = command.ExecuteReader();
-                dt.Load(dataReader);
-                connection.Close();
+                if (connection.State == ConnectionState.Closed)
+                    connection.Open();
+                SqlDataReader dr = command.ExecuteReader(CommandBehavior.CloseConnection);
+                dt.Load(dr);
                 return dt;
             }
             catch(Exception e)
             {
                 XtraMessageBox.Show("Veri yok !!!", "Bilgi");
                 return null;
+            }
+            finally
+            {
+                connection.Close();
             }
             
         }

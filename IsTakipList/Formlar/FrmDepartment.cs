@@ -1,10 +1,12 @@
 ﻿using DevExpress.XtraEditors;
+using ITLBusiness.BLC;
 using ITLBusiness.Concrete.Managers;
 using ITLBusiness.ValidationRules;
 using ITLDataAccess.Concrete;
 using ITLDataAccess.Concrete.EntityFramework;
 using ITLEntity.Concrete;
 using System;
+using System.Data;
 using System.Windows.Forms;
 
 
@@ -24,9 +26,9 @@ namespace IsTakipList.Formlar
         }
         
         void List()
-        {        
-            var categoryvalues = d.GetAllBL();
-            gctDepartman.DataSource = categoryvalues;
+        {
+            DataTable dtDepartment = GetDataList.getDepartmentList();
+            gctDepartman.DataSource = dtDepartment;
             gvwDepartman.Columns[0].Visible = false;
         }
         private void btnList_Click(object sender, EventArgs e)
@@ -45,7 +47,7 @@ namespace IsTakipList.Formlar
 
         private void btnSil_Click(object sender, EventArgs e)
         {
-            int x = int.Parse(gvwDepartman.GetFocusedRowCellValue("ID").ToString());
+            int x = int.Parse(gvwDepartman.GetFocusedRowCellValue("DepartmentID").ToString());
             var value = db.TblDepartments.Find(x);
             db.TblDepartments.Remove(value);
             db.SaveChanges();

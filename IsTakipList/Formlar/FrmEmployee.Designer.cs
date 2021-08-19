@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEmployee));
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gctEmployee = new DevExpress.XtraGrid.GridControl();
+            this.gvwEmployee = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.lookUpDepartman = new DevExpress.XtraEditors.LookUpEdit();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
@@ -48,8 +48,17 @@
             this.txtAd = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.splitterControl1 = new DevExpress.XtraEditors.SplitterControl();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            this.gvcI_EmployeeID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gvcI_EmployeeName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gvcI_EmployeeSurname = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gvcI_EmployeeMail = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gvcI_EmployeePhone = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gvcI_EmployeeImage = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gvcI_EmployeeDepartID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gvcI_EmployeeStatu = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gvcI_EmployeeDepartCode = new DevExpress.XtraGrid.Columns.GridColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.gctEmployee)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvwEmployee)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpDepartman.Properties)).BeginInit();
@@ -60,27 +69,37 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtAd.Properties)).BeginInit();
             this.SuspendLayout();
             // 
-            // gridControl1
+            // gctEmployee
             // 
-            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.gridControl1.Location = new System.Drawing.Point(6, 0);
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(588, 338);
-            this.gridControl1.TabIndex = 3;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
-            this.gridControl1.Load += new System.EventHandler(this.gridControl1_Load);
+            this.gctEmployee.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gctEmployee.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
+            this.gctEmployee.Location = new System.Drawing.Point(6, 0);
+            this.gctEmployee.MainView = this.gvwEmployee;
+            this.gctEmployee.Margin = new System.Windows.Forms.Padding(4);
+            this.gctEmployee.Name = "gctEmployee";
+            this.gctEmployee.Size = new System.Drawing.Size(588, 338);
+            this.gctEmployee.TabIndex = 3;
+            this.gctEmployee.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gvwEmployee});
+            this.gctEmployee.Load += new System.EventHandler(this.gridControl1_Load);
             // 
-            // gridView1
+            // gvwEmployee
             // 
-            this.gridView1.DetailHeight = 431;
-            this.gridView1.GridControl = this.gridControl1;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsView.ShowGroupPanel = false;
-            this.gridView1.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView1_FocusedRowChanged);
+            this.gvwEmployee.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gvcI_EmployeeID,
+            this.gvcI_EmployeeName,
+            this.gvcI_EmployeeSurname,
+            this.gvcI_EmployeeMail,
+            this.gvcI_EmployeePhone,
+            this.gvcI_EmployeeImage,
+            this.gvcI_EmployeeDepartID,
+            this.gvcI_EmployeeStatu,
+            this.gvcI_EmployeeDepartCode});
+            this.gvwEmployee.DetailHeight = 431;
+            this.gvwEmployee.GridControl = this.gctEmployee;
+            this.gvwEmployee.Name = "gvwEmployee";
+            this.gvwEmployee.OptionsView.ShowGroupPanel = false;
+            this.gvwEmployee.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView1_FocusedRowChanged);
             // 
             // groupControl1
             // 
@@ -101,7 +120,7 @@
             this.groupControl1.Controls.Add(this.labelControl1);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Right;
             this.groupControl1.Location = new System.Drawing.Point(594, 0);
-            this.groupControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupControl1.Margin = new System.Windows.Forms.Padding(4);
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(373, 338);
             this.groupControl1.TabIndex = 4;
@@ -109,7 +128,7 @@
             // lookUpDepartman
             // 
             this.lookUpDepartman.Location = new System.Drawing.Point(167, 228);
-            this.lookUpDepartman.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lookUpDepartman.Margin = new System.Windows.Forms.Padding(4);
             this.lookUpDepartman.Name = "lookUpDepartman";
             this.lookUpDepartman.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -120,7 +139,7 @@
             // labelControl6
             // 
             this.labelControl6.Location = new System.Drawing.Point(23, 231);
-            this.labelControl6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.labelControl6.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(121, 16);
             this.labelControl6.TabIndex = 14;
@@ -129,7 +148,7 @@
             // txtTel
             // 
             this.txtTel.Location = new System.Drawing.Point(167, 188);
-            this.txtTel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTel.Margin = new System.Windows.Forms.Padding(4);
             this.txtTel.Name = "txtTel";
             this.txtTel.Size = new System.Drawing.Size(133, 22);
             this.txtTel.TabIndex = 13;
@@ -137,7 +156,7 @@
             // labelControl5
             // 
             this.labelControl5.Location = new System.Drawing.Point(23, 197);
-            this.labelControl5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.labelControl5.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(76, 16);
             this.labelControl5.TabIndex = 12;
@@ -146,7 +165,7 @@
             // txtSoyad
             // 
             this.txtSoyad.Location = new System.Drawing.Point(167, 112);
-            this.txtSoyad.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSoyad.Margin = new System.Windows.Forms.Padding(4);
             this.txtSoyad.Name = "txtSoyad";
             this.txtSoyad.Size = new System.Drawing.Size(133, 22);
             this.txtSoyad.TabIndex = 11;
@@ -154,7 +173,7 @@
             // labelControl3
             // 
             this.labelControl3.Location = new System.Drawing.Point(23, 116);
-            this.labelControl3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.labelControl3.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(96, 16);
             this.labelControl3.TabIndex = 10;
@@ -163,7 +182,7 @@
             // txtMail
             // 
             this.txtMail.Location = new System.Drawing.Point(167, 150);
-            this.txtMail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMail.Margin = new System.Windows.Forms.Padding(4);
             this.txtMail.Name = "txtMail";
             this.txtMail.Size = new System.Drawing.Size(133, 22);
             this.txtMail.TabIndex = 9;
@@ -171,7 +190,7 @@
             // labelControl4
             // 
             this.labelControl4.Location = new System.Drawing.Point(23, 154);
-            this.labelControl4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.labelControl4.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(81, 16);
             this.labelControl4.TabIndex = 8;
@@ -180,7 +199,7 @@
             // txtID
             // 
             this.txtID.Location = new System.Drawing.Point(167, 31);
-            this.txtID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtID.Margin = new System.Windows.Forms.Padding(4);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(133, 22);
             this.txtID.TabIndex = 7;
@@ -189,7 +208,7 @@
             // labelControl2
             // 
             this.labelControl2.Location = new System.Drawing.Point(23, 34);
-            this.labelControl2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.labelControl2.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(70, 16);
             this.labelControl2.TabIndex = 6;
@@ -200,7 +219,7 @@
             // 
             this.btnGuncelle.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnGuncelle.ImageOptions.Image")));
             this.btnGuncelle.Location = new System.Drawing.Point(167, 362);
-            this.btnGuncelle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGuncelle.Margin = new System.Windows.Forms.Padding(4);
             this.btnGuncelle.Name = "btnGuncelle";
             this.btnGuncelle.Size = new System.Drawing.Size(133, 28);
             this.btnGuncelle.TabIndex = 5;
@@ -211,7 +230,7 @@
             // 
             this.btnSil.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSil.ImageOptions.Image")));
             this.btnSil.Location = new System.Drawing.Point(167, 326);
-            this.btnSil.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSil.Margin = new System.Windows.Forms.Padding(4);
             this.btnSil.Name = "btnSil";
             this.btnSil.Size = new System.Drawing.Size(133, 28);
             this.btnSil.TabIndex = 4;
@@ -222,7 +241,7 @@
             // 
             this.btnEkle.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnEkle.ImageOptions.Image")));
             this.btnEkle.Location = new System.Drawing.Point(167, 290);
-            this.btnEkle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEkle.Margin = new System.Windows.Forms.Padding(4);
             this.btnEkle.Name = "btnEkle";
             this.btnEkle.Size = new System.Drawing.Size(133, 28);
             this.btnEkle.TabIndex = 3;
@@ -232,7 +251,7 @@
             // txtAd
             // 
             this.txtAd.Location = new System.Drawing.Point(167, 69);
-            this.txtAd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtAd.Margin = new System.Windows.Forms.Padding(4);
             this.txtAd.Name = "txtAd";
             this.txtAd.Size = new System.Drawing.Size(133, 22);
             this.txtAd.TabIndex = 1;
@@ -240,7 +259,7 @@
             // labelControl1
             // 
             this.labelControl1.Location = new System.Drawing.Point(23, 73);
-            this.labelControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.labelControl1.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(76, 16);
             this.labelControl1.TabIndex = 0;
@@ -249,27 +268,113 @@
             // splitterControl1
             // 
             this.splitterControl1.Location = new System.Drawing.Point(0, 0);
-            this.splitterControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.splitterControl1.Margin = new System.Windows.Forms.Padding(4);
             this.splitterControl1.Name = "splitterControl1";
             this.splitterControl1.Size = new System.Drawing.Size(6, 338);
             this.splitterControl1.TabIndex = 5;
             this.splitterControl1.TabStop = false;
+            // 
+            // gvcI_EmployeeID
+            // 
+            this.gvcI_EmployeeID.Caption = "EmployeeID";
+            this.gvcI_EmployeeID.FieldName = "EmployeeID";
+            this.gvcI_EmployeeID.MinWidth = 25;
+            this.gvcI_EmployeeID.Name = "gvcI_EmployeeID";
+            this.gvcI_EmployeeID.Width = 94;
+            // 
+            // gvcI_EmployeeName
+            // 
+            this.gvcI_EmployeeName.Caption = "Personel Adı";
+            this.gvcI_EmployeeName.FieldName = "EmployeeName";
+            this.gvcI_EmployeeName.MinWidth = 25;
+            this.gvcI_EmployeeName.Name = "gvcI_EmployeeName";
+            this.gvcI_EmployeeName.Visible = true;
+            this.gvcI_EmployeeName.VisibleIndex = 0;
+            this.gvcI_EmployeeName.Width = 94;
+            // 
+            // gvcI_EmployeeSurname
+            // 
+            this.gvcI_EmployeeSurname.Caption = "Personel Soyadı";
+            this.gvcI_EmployeeSurname.FieldName = "EmployeeSurname";
+            this.gvcI_EmployeeSurname.MinWidth = 25;
+            this.gvcI_EmployeeSurname.Name = "gvcI_EmployeeSurname";
+            this.gvcI_EmployeeSurname.Visible = true;
+            this.gvcI_EmployeeSurname.VisibleIndex = 1;
+            this.gvcI_EmployeeSurname.Width = 94;
+            // 
+            // gvcI_EmployeeMail
+            // 
+            this.gvcI_EmployeeMail.Caption = "Personel Mail";
+            this.gvcI_EmployeeMail.FieldName = "EmployeeMail";
+            this.gvcI_EmployeeMail.MinWidth = 25;
+            this.gvcI_EmployeeMail.Name = "gvcI_EmployeeMail";
+            this.gvcI_EmployeeMail.Visible = true;
+            this.gvcI_EmployeeMail.VisibleIndex = 2;
+            this.gvcI_EmployeeMail.Width = 94;
+            // 
+            // gvcI_EmployeePhone
+            // 
+            this.gvcI_EmployeePhone.Caption = "Personel Telefon";
+            this.gvcI_EmployeePhone.FieldName = "EmployeePhone";
+            this.gvcI_EmployeePhone.MinWidth = 25;
+            this.gvcI_EmployeePhone.Name = "gvcI_EmployeePhone";
+            this.gvcI_EmployeePhone.Visible = true;
+            this.gvcI_EmployeePhone.VisibleIndex = 3;
+            this.gvcI_EmployeePhone.Width = 94;
+            // 
+            // gvcI_EmployeeImage
+            // 
+            this.gvcI_EmployeeImage.Caption = "Personel Görsel";
+            this.gvcI_EmployeeImage.FieldName = "EmployeeImage";
+            this.gvcI_EmployeeImage.MinWidth = 25;
+            this.gvcI_EmployeeImage.Name = "gvcI_EmployeeImage";
+            this.gvcI_EmployeeImage.Visible = true;
+            this.gvcI_EmployeeImage.VisibleIndex = 4;
+            this.gvcI_EmployeeImage.Width = 94;
+            // 
+            // gvcI_EmployeeDepartID
+            // 
+            this.gvcI_EmployeeDepartID.Caption = "EmployeeDepartID";
+            this.gvcI_EmployeeDepartID.FieldName = "EmployeeDepartID";
+            this.gvcI_EmployeeDepartID.MinWidth = 25;
+            this.gvcI_EmployeeDepartID.Name = "gvcI_EmployeeDepartID";
+            this.gvcI_EmployeeDepartID.Width = 94;
+            // 
+            // gvcI_EmployeeStatu
+            // 
+            this.gvcI_EmployeeStatu.Caption = "Personel Statü";
+            this.gvcI_EmployeeStatu.FieldName = "EmployeeStatu";
+            this.gvcI_EmployeeStatu.MinWidth = 25;
+            this.gvcI_EmployeeStatu.Name = "gvcI_EmployeeStatu";
+            this.gvcI_EmployeeStatu.Visible = true;
+            this.gvcI_EmployeeStatu.VisibleIndex = 5;
+            this.gvcI_EmployeeStatu.Width = 94;
+            // 
+            // gvcI_EmployeeDepartCode
+            // 
+            this.gvcI_EmployeeDepartCode.Caption = "Personel Departmanı";
+            this.gvcI_EmployeeDepartCode.FieldName = "EmployeeDepartCode";
+            this.gvcI_EmployeeDepartCode.MinWidth = 25;
+            this.gvcI_EmployeeDepartCode.Name = "gvcI_EmployeeDepartCode";
+            this.gvcI_EmployeeDepartCode.Visible = true;
+            this.gvcI_EmployeeDepartCode.VisibleIndex = 6;
+            this.gvcI_EmployeeDepartCode.Width = 94;
             // 
             // FrmEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(967, 338);
-            this.Controls.Add(this.gridControl1);
+            this.Controls.Add(this.gctEmployee);
             this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.splitterControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmEmployee";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Personel Listesi";
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gctEmployee)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvwEmployee)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
@@ -285,8 +390,8 @@
 
         #endregion
 
-        private DevExpress.XtraGrid.GridControl gridControl1;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.GridControl gctEmployee;
+        private DevExpress.XtraGrid.Views.Grid.GridView gvwEmployee;
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraEditors.TextEdit txtID;
         private DevExpress.XtraEditors.LabelControl labelControl2;
@@ -304,5 +409,14 @@
         private DevExpress.XtraEditors.LabelControl labelControl6;
         private DevExpress.XtraEditors.TextEdit txtTel;
         private DevExpress.XtraEditors.LabelControl labelControl5;
+        private DevExpress.XtraGrid.Columns.GridColumn gvcI_EmployeeID;
+        private DevExpress.XtraGrid.Columns.GridColumn gvcI_EmployeeName;
+        private DevExpress.XtraGrid.Columns.GridColumn gvcI_EmployeeSurname;
+        private DevExpress.XtraGrid.Columns.GridColumn gvcI_EmployeeMail;
+        private DevExpress.XtraGrid.Columns.GridColumn gvcI_EmployeePhone;
+        private DevExpress.XtraGrid.Columns.GridColumn gvcI_EmployeeImage;
+        private DevExpress.XtraGrid.Columns.GridColumn gvcI_EmployeeDepartID;
+        private DevExpress.XtraGrid.Columns.GridColumn gvcI_EmployeeStatu;
+        private DevExpress.XtraGrid.Columns.GridColumn gvcI_EmployeeDepartCode;
     }
 }

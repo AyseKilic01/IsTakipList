@@ -59,6 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\IListService.cs" />
+    <Compile Include="BLC\GetDataList.cs" />
     <Compile Include="Concrete\Managers\AdminManager.cs" />
     <Compile Include="Concrete\Managers\ControlManager.cs" />
     <Compile Include="Concrete\Managers\DepartmentManager.cs" />
